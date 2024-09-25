@@ -3,7 +3,19 @@
 
 ## What is it
 
-Sx4 is a musical making system designed to exploit the power of a quadraphonic speaker setting. It is a kind of a framework: it is componed of many modules that can save presets globally and that can also be controlled via OSC. The modules are fully built instruments. You can think of it this way: Sx4 can be used to build a fixed instrument set (i.e. two subtractive synths, one fm synth, two sequencers, etc.) and use it to make songs that can be saved and recalled.
+Sx4 is a musical making system designed to exploit the power of a quadraphonic speaker setting. It is a kind of a framework: it is componed of many modules that can save presets globally and that can also be controlled via OSC. The modules are fully built instruments. You can think of it this way: Sx4 can be used to build a fixed instrument set (i.e. two subtractive synths, one fm synth, two sequencers, etc.) and use it to make songs that can be saved and recalled.  This project, so far, consist of the following modules:
+
+* **melodic_seq**: is a melodic sequence generator. It can generate a random sequence of (max) 32 steps that can be varied througout the performance.
+
+* **chords_seq**: is a chord sequence generator. It can generate a chord sequence of (max) 8 bars, add pattern and traspositions.
+
+* **brds_synth**: is a polyphonic subtractive synth based on the Mutable Instruments Beards oscillator and on the Rings resonator. 
+
+* **fm_synth**: is a polyphonic phase modulation synth: a clone of the DX7.
+
+* **drum_machine**: is a 4 tracks sample based drum machine with a Kaoss Pad style xy effect.
+
+* **quad_effects**: is a fx chain that includes: chorus, phaser, flanger, delays, granulator (M.I. Clouds) and reverbs.
 
 ## Structure
 
@@ -21,22 +33,7 @@ In the main patch there must be some object:
 
 ## Modules
 
-A module is a patch that generates notes (such a melody or a chord sequence) or that generates sound. This project, so far, consist of the following modules:
-
-* **melodic_seq**: is a melodic sequence generator. It can generate a random sequence of (max) 32 steps that can be varied througout the performance.
-
-* **chords_seq**: is a chord sequence generator. It can generate a chord sequence of (max) 8 bars, add pattern and traspositions.
-
-* **brds_synth**: is a polyphonic subtractive synth based on the Mutable Instruments Beards oscillator and on the Rings resonator. 
-
-* **fm_synth**: is a polyphonic phase modulation synth: a clone of the DX7.
-
-* **drum_machine**: is a 4 tracks sample based drum machine with a Kaoss Pad style xy effect.
-
-* **quad_effects**: is a fx chain that includes: chorus, phaser, flanger, delays, granulator (M.I. Clouds) and reverbs.
-
-
-Each module should have a **[main_connection]** object connected to its inlet. This sets the ID and the OSC name of the module. It also allow the module to receive the messages that are sent via the **[s to_all]** object: this messages are:
+A module is a patch that generates notes (such a melody or a chord sequence) or that generates sound. Each module should have a **[main_connection]** object connected to its inlet. This sets the ID and the OSC name of the module. It also allow the module to receive the messages that are sent via the **[s to_all]** object: this messages are:
 
 * **bang_bpm**: a number representing the midi_clock period of the main clock (24 ppqn). It acts also as a midi_clock pulse.
 
