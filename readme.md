@@ -1,9 +1,9 @@
 
-# Quad_project
+# Sx4
 
 ## What is it
 
-Quad_project is a musical making system designed to exploit the power of a quadraphonic speaker setting. It is a kind of a framework: it is componed of many modules that can save presets globally and that can also be controlled via OSC. The modules are fully built instruments. You can think of it this way: quad_project can be used to build a fixed instrument set (i.e. two brds synths, one fm_synth, two melodic_seq, etc.) and use it to make songs that can be saved and recalled.
+Sx4 is a musical making system designed to exploit the power of a quadraphonic speaker setting. It is a kind of a framework: it is componed of many modules that can save presets globally and that can also be controlled via OSC. The modules are fully built instruments. You can think of it this way: Sx4 can be used to build a fixed instrument set (i.e. two brds synths, one fm_synth, two melodic_seq, etc.) and use it to make songs that can be saved and recalled.
 
 ## Structure
 
@@ -76,13 +76,13 @@ A wrapping can contain more than one module. In this case a **[main_connection_e
 
 ## TouchOSC
 
-Quad_project can be used directly loading the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
+Sx4 can be used directly loading the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
 
 It has many pages, each corresponding to a module (more or less). To be easily modified, each controller object send out a OSC message composed as `osc_name/parameter_number`. The OSC name is built using `parent.name` parameter. In this way you can copy and paste the controller object (a slider, ...) in a different page that has a different name and edit only the number at the end of the OSC address.
 
 ## The server
 
-Here are the instruction to build a headless server that runs quad_project. It has been tested on Debian 12.
+Here are the instruction to build a headless server that runs Sx4. It has been tested on Debian 12.
 
 * Install Debian without any DE.
 
