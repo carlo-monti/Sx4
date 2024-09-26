@@ -74,16 +74,54 @@ A wrapping can contain more than one module. In this case a **[main_connection_e
 The loading/saving of presets (or sequences...) is done with two objects:
 
 * **[load_preset]**: this objects takes one or two arguments. The first one is the table where the preset has to be written into (usually presets_$0). The second one (optional) is the preset file specification (i.e. _seq). It must be initialized with two parameters: the ID (2nd inlet) and the current_path (3rd inlet).
-As an example, the object **[load_preset presets_$0 _seq], with parameters ID = 2 and current_path = `/path/to/preset` works in this way: whenever it receives a number (say 5) on the first inlet it will read the file
-`/path/to/preset/2/5_seq.txt` into the table presets_$0 and after that it will iterate the index-values pair of that table from the outlet.
-Usually a sound module has a preset_$0 table and it will save only one preset in the folder identified by its ID (i.e. /presets/2/5.txt is the preset 5 of the module with ID 2). The generation module may need to store other things such as the sequence. This is done with another load_preset object that has a second argument that represent the filename specification: something that is appended to the txt filename (as in the example above).
+As an example, the object **[load_preset presets_$0 _seq]**, with parameters ID = 2 and current_path = `/path/to/preset` works in this way: whenever it receives a number (say 5) on the first inlet it will read the file
+`/path/to/preset/2/5_seq.txt` into the table `presets_$0` and after that it will iterate the index-values pair of that table from the outlet.
+Usually a sound module has a preset_$0 table and it will save only one preset in the folder identified by its ID (i.e. `/presets/2/5.txt` is the preset 5 of the module with ID 2). The generation module may need to store other things such as the sequence. This is done with another load_preset object that has a second argument that represent the filename specification: something that is appended to the txt filename (as in the example above).
 
 * **[save_preset]**: this object takes two arguments. The first is the table and the second is the number of preset values that has to be saved. As the load_preset object, it needs ID and current_path as parameters. Whenever it receives a number in its 1st inlet, it will collect the preset values stored in the preset table
 
- 
+## Folder structure
+
+.
+└── Sx4/
+    ├── modules/
+    │   ├── commons
+    │   ├── module_1_abs/
+    │   │   ├── abs1-1.pd
+    │   │   ├── abs1-2.pd
+    │   │   └── [...]
+    │   ├── module_2_abs/
+    │   ├── [...]
+    │   ├── module_1.pd
+    │   ├── module_2.pd
+    │   └── [...]
+    ├── sets/
+    │   ├── set_1/
+    │   │   ├── main.pd
+    │   │   ├── control.tosc
+    │   │   └── presets/
+    │   │       ├── last_saved_presets.txt
+    │   │       ├── 0/
+    │   │       │   ├── 0.txt
+    │   │       │   ├── 1.txt
+    │   │       │   └── [...]
+    │   │       ├── 1/
+    │   │       │   ├── 0.txt
+    │   │       │   ├── 0_seq.txt
+    │   │       │   └── [...]
+    │   │       ├── 2/
+    │   │       ├── 3/
+    │   │       ├── [...]
+    │   │       ├── 100/
+    │   │       ├── 101/
+    │   │       └── 102/
+    │   ├── set_2
+    │   └── [...]
+    └── templates
+    
 ## TouchOSC
 
-Sx4 can be used directly loading the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
+Sx4 can be used directly loading and controlling the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
 
 It has many pages, each corresponding to a module (more or less). To be easily modified, each controller object send out a OSC message composed as `osc_name/parameter_number`. The OSC name is built using `parent.name` parameter. In this way you can copy and paste the controller object (a slider, ...) in a different page that has a different name and edit only the number at the end of the OSC address.
 
