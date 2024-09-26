@@ -81,7 +81,7 @@ Usually a sound module has a preset_$0 table and it will save only one preset in
 * **[save_preset]**: this object takes two arguments. The first is the table and the second is the number of preset values that has to be saved. As the load_preset object, it needs ID and current_path as parameters. Whenever it receives a number in its 1st inlet, it will collect the preset values stored in the preset table
 
 ## Folder structure
-
+```
 Sx4
 ├── modules
 │   ├── commons
@@ -117,7 +117,7 @@ Sx4
 │   ├── set_2
 │   └── [...]
 └── templates
-    
+```
 ## TouchOSC
 
 Sx4 can be used directly loading and controlling the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
