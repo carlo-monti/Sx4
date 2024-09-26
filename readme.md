@@ -82,42 +82,41 @@ Usually a sound module has a preset_$0 table and it will save only one preset in
 
 ## Folder structure
 
-.
-└── Sx4/
-    ├── modules/
-    │   ├── commons
-    │   ├── module_1_abs/
-    │   │   ├── abs1-1.pd
-    │   │   ├── abs1-2.pd
-    │   │   └── [...]
-    │   ├── module_2_abs/
-    │   ├── [...]
-    │   ├── module_1.pd
-    │   ├── module_2.pd
-    │   └── [...]
-    ├── sets/
-    │   ├── set_1/
-    │   │   ├── main.pd
-    │   │   ├── control.tosc
-    │   │   └── presets/
-    │   │       ├── last_saved_presets.txt
-    │   │       ├── 0/
-    │   │       │   ├── 0.txt
-    │   │       │   ├── 1.txt
-    │   │       │   └── [...]
-    │   │       ├── 1/
-    │   │       │   ├── 0.txt
-    │   │       │   ├── 0_seq.txt
-    │   │       │   └── [...]
-    │   │       ├── 2/
-    │   │       ├── 3/
-    │   │       ├── [...]
-    │   │       ├── 100/
-    │   │       ├── 101/
-    │   │       └── 102/
-    │   ├── set_2
-    │   └── [...]
-    └── templates
+Sx4
+├── modules
+│   ├── commons
+│   ├── module_1_abs/
+│   │   ├── abs1-1.pd
+│   │   ├── abs1-2.pd
+│   │   └── [...]
+│   ├── module_2_abs/
+│   ├── [...]
+│   ├── module_1.pd
+│   ├── module_2.pd
+│   └── [...]
+├── sets
+│   ├── set_1
+│   │   ├── main.pd
+│   │   ├── control.tosc
+│   │   └── presets
+│   │       ├── last_saved_presets.txt
+│   │       ├── 0
+│   │       │   ├── 0.txt
+│   │       │   ├── 1.txt
+│   │       │   └── [...]
+│   │       ├── 1
+│   │       │   ├── 0.txt
+│   │       │   ├── 0_seq.txt
+│   │       │   └── [...]
+│   │       ├── 2/
+│   │       ├── 3/
+│   │       ├── [...]
+│   │       ├── 100/
+│   │       ├── 101/
+│   │       └── 102/
+│   ├── set_2
+│   └── [...]
+└── templates
     
 ## TouchOSC
 
