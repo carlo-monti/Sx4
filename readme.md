@@ -71,6 +71,29 @@ Each module (usually the sound generators) can be loaded as a subprocess using t
 
 A wrapping can contain more than one module. In this case a **[main_connection_ext_dual]** object (or triple, ...) should be used. The first parameter is the path to the wrapping and the other parameters are a sequence of ID and OSC name. I.e. the object **[main_connection_ext_dual ./brds_synth/brds_synt_wrap_with_effects.pd 0 brds 2 brdseff]** loads the wrapping containing the brds synth and the quad effects modules. The brds synth will have a ID of 0 and receives the OSC messages as `brds` and the quad effects module will have a ID of 2 and receives the OSC messages as `brdseff`. Inside the wrapping the module should have objects such as **[r sub1]**, **[r sub2]**, ... and one **[stdout]** object.
 
+The loading/saving of presets (or sequences...) is done with two objects:
+
+* **[load_preset]**: this objects takes one or two arguments. The first one is the table where the preset has to be written into (usually presets_$0).
+
+The second one (optional) is the preset file specification (i.e. _seq). It must be initialized with two parameters: the ID (2nd inlet) and the current_path (3rd inlet).
+
+As an example, the object **[load_preset presets_$0 _seq], with parameters ID = 2 and current_path = "/path/to/preset" works in this way: whenever it receives a number (say 5) on the first inlet it will read the file
+
+/path/to/preset/2/5_seq.txt into the table presets_$0 and after that it will iterate the index-values pair of that table from the outlet.
+
+Usually a sound module has a preset_$0 table and it will save only one preset in the folder identified by its ID (i.e. /presets/2/5.txt is the preset 5 of the module with ID 2). The generation module may need to store other things
+
+such as the sequence. This is done with another load_preset object that has a second argument that represent the filename specification: something that
+
+is appended to the txt filename (as in the example above).
+
+* **[save_preset]**: this object takes two arguments. The first is the table and the second is the number of preset values that has to be saved.
+
+Similarly to the load_preset object, it needs ID and current_path as parameters. Whenever it receives a number in its 1st inlet, it will collect
+
+the preset values stored in the preset table
+
+ 
 ## TouchOSC
 
 Sx4 can be used directly loading the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
