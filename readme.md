@@ -81,7 +81,7 @@ Usually a sound module has a preset_$0 table and it will save only one preset in
 * **[save_preset]**: this object takes two arguments. The first is the table and the second is the number of preset values that has to be saved. As the load_preset object, it needs ID and current_path as parameters. Whenever it receives a number in its 1st inlet, it will collect the preset values stored in the preset table
 
 ## Folder structure
-```
+```bash
 Sx4
 ├── modules
 │   ├── commons
