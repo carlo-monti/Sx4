@@ -151,6 +151,9 @@ Quad project is a framework for making music exploiting the power of a quadrapho
 by modules that produces or process spatialized sound that are completely compatible with Pure Data Vanilla. 
 The main.pd file is the entry point.
 
+## To do
+* Add default preset for a module (i.e. load a standard piano sound...)
+
 ## References
 Sx4 is heavily based on the following projects:
 * [Mi4Pd](https://github.com/TheTechnobear/Mi4Pd)
