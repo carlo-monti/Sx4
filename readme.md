@@ -153,7 +153,7 @@ The main.pd file is the entry point.
 
 ## References
 Sx4 is heavily based on the following projects:
-* [Mi4Pd]([https://www.google.com](https://github.com/TheTechnobear/Mi4Pd)
+* [Mi4Pd](https://github.com/TheTechnobear/Mi4Pd)
 * [pd-mkmr](https://github.com/MikeMorenoDSP/pd-mkmr)
 * [automatonism](https://www.automatonism.com/)
 * [Luzha FX Punch-In](https://patchstorage.com/luzha-fx-punch-in-effect-board-for-pd/)
