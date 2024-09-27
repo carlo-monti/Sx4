@@ -158,3 +158,5 @@ Sx4 is heavily based on the following projects:
 * [automatonism](https://www.automatonism.com/)
 * [Luzha FX Punch-In](https://patchstorage.com/luzha-fx-punch-in-effect-board-for-pd/)
 * [Fx-Chain patch](http://www.pdpatchrepo.info/hurleur/FX_Chain.zip)
+* [DIY2](http://www.pdpatchrepo.info/hurleur/DIY2.zip)
+* [CrossPomeha](https://patchstorage.com/crosspomeha-pd-version/)
