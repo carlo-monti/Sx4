@@ -153,6 +153,7 @@ The main.pd file is the entry point.
 
 ## To do
 * Add default preset for a module (i.e. load a standard piano sound...)
+* Add fade-in function for the melodic_seq
 
 ## References
 Sx4 is heavily based on the following projects:
