@@ -149,4 +149,12 @@ Here are the instruction to build a headless server that runs Sx4. It has been t
 * Launch the patch `pd -nogui -jack -outchannels 4 main.pd`
 Quad project is a framework for making music exploiting the power of a quadraphonic speaker configuration. It is constituted
 by modules that produces or process spatialized sound that are completely compatible with Pure Data Vanilla. 
-The main.pd file is the entry point. 
+The main.pd file is the entry point.
+
+## References
+Sx4 is heavily based on the following projects:
+* [Mi4Pd]([https://www.google.com](https://github.com/TheTechnobear/Mi4Pd)
+* [pd-mkmr](https://github.com/MikeMorenoDSP/pd-mkmr)
+* [automatonism](https://www.automatonism.com/)
+* [Luzha FX Punch-In](https://patchstorage.com/luzha-fx-punch-in-effect-board-for-pd/)
+* [Fx-Chain patch](http://www.pdpatchrepo.info/hurleur/FX_Chain.zip)
