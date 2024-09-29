@@ -52,7 +52,7 @@ You can create as many sets as you want by simply repeating all of the above in 
 
 The heart of the system is the `main.pd` patch. All the modules can be loaded directly here or as a subprocess using the **[pd~]** object. It is possible to load many instances of a module, each identified by an ID (this is needed to avoid overwriting presets) and by an OSC name (optional). The module is connected using a  **[main_connection]** object that takes the two previous parameters as argument. For example the module **[brds_synth]** connected with the **[main_connection 2 brds_synth_2]** object will receive OSC commands as `brds_synth_2` and has ID of 2. This means that it will save its preset in the folder `presets/brds_synth/2/`.
 
-In the main patch there must be this objects:
+A main patch must contain this objects:
 
 * **[osc_connection]**: this handles the OSC communication
 
@@ -61,6 +61,8 @@ In the main patch there must be this objects:
 * **[note_router]**: this object receives notes from the generators and routes it to the connected instruments. It allows to select the source for a particular instrument (a instrument should have max 1 source).
 
 * **[song_handler]**: this objects sets the global tempo and the global volume.
+
+* **[output]**: this objects sends the 4 outputs of a module to the dac scaling the volume or merging to stereo.
 
 ## Modules
 
