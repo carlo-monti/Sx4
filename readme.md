@@ -17,6 +17,31 @@ Sx4 is a musical making system designed to exploit the power of a quadraphonic s
 
 * **quad_effects**: is a fx chain that includes: chorus, phaser, flanger, delays, granulator (M.I. Clouds) and reverbs.
 
+## Getting started
+
+This section illustrate how to start making music with Sx4. Let's create a simple monophonic generative set:
+* **Create a new project**. Copy the `templates/set_template` folder in the `sets` folder and rename it as you want. This will be the folder of your new project. To open it simply open the `main.pd` file.
+* **Add instruments to your project**. Load modules in the main patch.
+   * Create a new object and type the name of the desidered module: `melody_seq`.
+   * Create a **[main_connection 0]** objects and connect it to the first inlet of the module. This will assign ID 0 to it.
+   * Do the same for creating a `brds_synth` module: create the object and assign to it ID 1.
+   * Create a **[note_sender 1]** object and connect it to the first outlet of the `melody_seq` module. This will allow the module to be selected as source (from the note router) as source 1.
+   * Create a **[note_receiver 1]** object and connect it to the first outlet of the connection object of the `brds_synth`. This will allow the module to be selected (from the note router) as recever 1.
+   * Connect the 4 rightmost outlets of the `brds_synth` to the main output: simply connect a **[s~ to_output_1]** (1,2,...) to it.
+* **Start making music**.
+   * Initialize the project: click on the `init` button.
+   * Turn on the `melody_seq` by clicking on the radio on top left and select `internal`: this will start the generation of the notes following the internal tempo.
+   * Assign the source 1 to the destination 1 in the note router matrix.
+   * Turn on the main volume.
+   * Now you should hear sound!
+* **Add another synth**. This time we will load it in a subprocess.
+   * Create a **[pd~ -ninsig 0 -noutsig 4]**.
+   * Create a **[main_connection_ext 2 fm_synth_wrap.pd]** objects and connect it to the first inlet of the module. This will assign ID 2 to it.
+   * Create a **[note_receiver 2]** object and connect it to the first outlet of the connection object of the `fm_synth`. This will allow the module to be selected (from the note router) as recever 2.
+   * Connect the 4 outlet of the **[pd~]** object to the main out.
+   * Re-initialize the project by clicking on the `init` button. This will start the new module in a new window.
+   * Now you can select the source 1 also for this synth.
+
 ## Structure
 
 The heart of the system is the `main.pd` patch. All the modules can be loaded directly here or as a subprocess using the **[pd~]** object. It is possible to load many instances of a module, each identified by an ID (this is needed to avoid overwriting presets) and by an OSC name (optional). The module is connected using a  **[main_connection]** object that takes the two previous parameters as argument. For example the module **[brds_synth]** connected with the **[main_connection 2 brds_synth_2]** object will receive OSC commands as `brds_synth_2` and has ID of 2. This means that it will save its preset in the folder `presets/brds_synth/2/`.
@@ -80,7 +105,13 @@ Usually a sound module has a preset_$0 table and it will save only one preset in
 * **[save_preset]**: this object takes two or three creation arguments. The first is the table name, the second one is the number of preset values that has to be saved and the third is the filename specification. As the load_preset object, it needs ID and current_path as parameters. Whenever it receives a number in its 1st inlet, it will collect the preset values stored in the preset table. 
 
 ## Folder structure
-This is the folder structure of the whole project. It is organized in such a way that every update or exporting sets is done by drop-in (copy-paste) a folder. The `modules` folder contains the modules (i.e. `module_1.pd`) that can be loaded in the main patch and the wrappings (i.e. `module_1_wrap.pd`) to be loaded in a subprocess. This folder also contains subfolders for the abstractions required by each module (i.e. `module_1_abs`)
+This is the folder structure of the whole project. It is organized in such a way that every update or exporting sets is done by drop-in (copy-paste) a folder. 
+
+### Modules folder
+The `modules` folder contains the modules (i.e. `module_1.pd`) that can be loaded in the main patch and the wrappings (i.e. `module_1_wrap.pd`) to be loaded in a subprocess. This folder also contains subfolders for the abstractions required by each module (i.e. `module_1_abs`) and the `commons` folder that contains all the little abstractions shared by the modules (and also the mandatory modules used in the main patch: presets, routing, ect.).
+
+### Sets folder
+The `sets` folder contains a subfolder for each set. Each folder can be freely named and it must contain a `presets` folder in which all the instances of modules will store their presets.
 ```bash
 Sx4
 ├── modules
