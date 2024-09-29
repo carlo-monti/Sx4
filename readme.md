@@ -116,6 +116,14 @@ This is the folder structure of the whole project. It is organized in such a way
 ### Modules folder
 The `modules` folder contains the modules (i.e. `module_1.pd`) that can be loaded in the main patch and the wrappings (i.e. `module_1_wrap.pd`) to be loaded in a subprocess. This folder also contains subfolders for the abstractions required by each module (i.e. `module_1_abs`) and the `commons` folder that contains all the little abstractions shared by the modules (and also the mandatory modules used in the main patch: presets, routing, ect.).
 
+### Init
+When the init button is pressed (on the main patch):
+* The current path is sent to all the **[main_connection]** objects (**[also main_connection_ext]**)
+* The init bang is sent. It is received by the **[main_connection]** objects and by the preset object.
+* When a **[main_connection]** object receives the init bang, it sends out the `osc_name` and the `current_path` to the module connected to it.
+* When a **[main_connection_ext]** object receives the init bang, it will start the subprocess and after 2 seconds it will send out the `osc_name` and the `current_path` to the module connected to it (to allow the starting of the subprocess).
+* When the preset object receives the init bang, it will wait 3 seconds and it will send out the **[load 0(** message.
+  
 ### Sets folder
 The `sets` folder contains a subfolder for each set. Each folder can be freely named and it must contain a `presets` folder in which all the instances of modules will store their presets.
 ```bash
