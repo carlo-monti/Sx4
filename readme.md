@@ -41,6 +41,8 @@ This section illustrate how to start making music with Sx4. Let's create a simpl
    * Connect the 4 outlet of the **[pd~]** object to the main out.
    * Re-initialize the project by clicking on the `init` button. This will start the new module in a new window.
    * Now you can select the source 1 also for this synth.
+* **Save it**.
+  * Click on the `save` button on the preset module. This will save this song as 1. You can later recall it by clicking on the load button.
 
 ## Structure
 
