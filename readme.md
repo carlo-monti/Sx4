@@ -98,12 +98,6 @@ The presets are handled in each module via a **[pd handle_presets]** subpatch. E
 
 There are also some paramers that should not be saved but needs to be controlled via OSC (such as momentary buttons...). This is handled in the same way but in this case the object is called **[r ctrl_value]** and its code should start from 100. Similarly there are some informations that needs to be puts out without being saved. This are handled via ad-hoc configuration that receives message from the **[s fdbk_value]** object.
 
-### Subprocess
-
-Each module (usually the sound generators) can be loaded as a subprocess using the **[pd~]** object. In this case the connection object should be **[main_connection_ext]**. The first parameter is the path to the object and the other two parameters are the same: ID and OSC name. In this case the module should be loaded via its wrapping (i.e. `brds_synth_wrap.pd`) specifying the inlets and outlets on the **[pd~]** object. The wrapping receives messages on the **[r sub1]** object inside and outputs its (already formatted) OSC messages via the **[stdout]** object.
-
-A wrapping can contain more than one module. In this case a **[main_connection_ext_dual]** object (or triple, ...) should be used. The first parameter is the path to the wrapping and the other parameters are a sequence of ID and OSC name. I.e. the object **[main_connection_ext_dual ./brds_synth/brds_synt_wrap_with_effects.pd 0 brds 2 brdseff]** loads the wrapping containing the brds synth and the quad effects modules. The brds synth will have a ID of 0 and receives the OSC messages as `brds` and the quad effects module will have a ID of 2 and receives the OSC messages as `brdseff`. Inside the wrapping the module should have objects such as **[r sub1]**, **[r sub2]**, ... and one **[stdout]** object.
-
 The loading/saving of presets (or sequences...) is done with two objects:
 
 * **[load_preset]**: this objects takes one or two creation arguments. The first one is the table name where the preset has to be written into (usually presets_$0). The second one (optional) is the preset file specification (i.e. `_seq`). To work properly it must be initialized with two parameters: the ID (2nd inlet) and the current_path (3rd inlet). The fourth inlet lets you set the filname specification.
@@ -111,6 +105,14 @@ As an example, the object **[load_preset presets_$0 _seq]**, with parameters ID 
 Usually a sound module has a preset_$0 table and it will save only one preset in the folder identified by its ID (i.e. `/presets/2/5.txt` is the preset 5 of the module with ID 2). The generation module may need to store other things such as the sequence. This is done with another load_preset object that has a second argument that represent the filename specification: something that is appended to the txt filename (as in the example above).
 
 * **[save_preset]**: this object takes two or three creation arguments. The first is the table name, the second one is the number of preset values that has to be saved and the third is the filename specification (optional). As the load_preset object, it needs ID and current_path as parameters. The fourth and the fifth inlets lets you set dinamically the number of presets and the filename specification. Whenever it receives a number in its 1st inlet, it will collect the preset values stored in the preset table. 
+
+
+### Subprocess
+
+Each module (usually the sound generators) can be loaded as a subprocess using the **[pd~]** object. In this case the connection object should be **[main_connection_ext]**. The first parameter is the path to the object and the other two parameters are the same: ID and OSC name. In this case the module should be loaded via its wrapping (i.e. `brds_synth_wrap.pd`) specifying the inlets and outlets on the **[pd~]** object. The wrapping receives messages on the **[r sub1]** object inside and outputs its (already formatted) OSC messages via the **[stdout]** object.
+
+A wrapping can contain more than one module. In this case a **[main_connection_ext_dual]** object (or triple, ...) should be used. The first parameter is the path to the wrapping and the other parameters are a sequence of ID and OSC name. I.e. the object **[main_connection_ext_dual ./brds_synth/brds_synt_wrap_with_effects.pd 0 brds 2 brdseff]** loads the wrapping containing the brds synth and the quad effects modules. The brds synth will have a ID of 0 and receives the OSC messages as `brds` and the quad effects module will have a ID of 2 and receives the OSC messages as `brdseff`. Inside the wrapping the module should have objects such as **[r sub1]**, **[r sub2]**, ... and one **[stdout]** object.
+
 
 ## Folder structure
 This is the folder structure of the whole project. It is organized in such a way that every update or exporting sets is done by drop-in (copy-paste) a folder. 
