@@ -27,7 +27,7 @@ This section illustrate how to start making music with Sx4. Let's create a simpl
    * Do the same for creating a `brds_synth` module: create the object and assign to it ID 1.
    * Create a **[note_sender 1]** object and connect it to the first outlet of the `melody_seq` module. This will allow the module to be selected as source (from the note router) as source 1.
    * Create a **[note_receiver 1]** object and connect it to the first outlet of the connection object of the `brds_synth`. This will allow the module to be selected (from the note router) as recever 1.
-   * Connect the 4 rightmost outlets of the `brds_synth` to the main output: simply connect a **[s~ to_output_1]** (1,2,...) to it.
+   * Connect the 4 rightmost outlets of the `brds_synth` to the main output: simply connect a **[s~ to_dac_1]** (1,2,...) to it.
 * **Start making music**.
    * Initialize the project: click on the `init` button.
    * Turn on the `melody_seq` by clicking on the radio on top left and select `internal`: this will start the generation of the notes following the internal tempo.
@@ -104,11 +104,11 @@ A wrapping can contain more than one module. In this case a **[main_connection_e
 
 The loading/saving of presets (or sequences...) is done with two objects:
 
-* **[load_preset]**: this objects takes one or two creation arguments. The first one is the table name where the preset has to be written into (usually presets_$0). The second one (optional) is the preset file specification (i.e. `_seq`). To work properly it must be initialized with two parameters: the ID (2nd inlet) and the current_path (3rd inlet).
+* **[load_preset]**: this objects takes one or two creation arguments. The first one is the table name where the preset has to be written into (usually presets_$0). The second one (optional) is the preset file specification (i.e. `_seq`). To work properly it must be initialized with two parameters: the ID (2nd inlet) and the current_path (3rd inlet). The fourth inlet lets you set the filname specification.
 As an example, the object **[load_preset presets_$0 _seq]**, with parameters ID = 2 and current_path = `/path/to/preset` works in this way: whenever it receives a number (say 5) on the first inlet it will read the file `/path/to/preset/2/5_seq.txt` into the table `presets_$0` and after that it will iterate the index-values pair of that table from the outlet.
 Usually a sound module has a preset_$0 table and it will save only one preset in the folder identified by its ID (i.e. `/presets/2/5.txt` is the preset 5 of the module with ID 2). The generation module may need to store other things such as the sequence. This is done with another load_preset object that has a second argument that represent the filename specification: something that is appended to the txt filename (as in the example above).
 
-* **[save_preset]**: this object takes two or three creation arguments. The first is the table name, the second one is the number of preset values that has to be saved and the third is the filename specification. As the load_preset object, it needs ID and current_path as parameters. Whenever it receives a number in its 1st inlet, it will collect the preset values stored in the preset table. 
+* **[save_preset]**: this object takes two or three creation arguments. The first is the table name, the second one is the number of preset values that has to be saved and the third is the filename specification (optional). As the load_preset object, it needs ID and current_path as parameters. The fourth and the fifth inlets lets you set dinamically the number of presets and the filename specification. Whenever it receives a number in its 1st inlet, it will collect the preset values stored in the preset table. 
 
 ## Folder structure
 This is the folder structure of the whole project. It is organized in such a way that every update or exporting sets is done by drop-in (copy-paste) a folder. 
