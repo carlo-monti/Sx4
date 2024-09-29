@@ -43,8 +43,9 @@ This section illustrate how to start making music with Sx4. Let's create a simpl
    * Now you can select the source 1 also for this synth.
 * **Save it**.
   * Click on the `save` button on the preset module. This will save this song as 1. You can later recall it by clicking on the load button.
+* **Add OSC control**. To control your patch via OSC you can assign the OSC name to a module using the connection object: **[main_connection 1 brds1]** will make the `brds_synth` responding on the `brds1` name. It means that you can control the parameter number 21 by sending a value to `brds1/21`. You can find a parameter list with the corresponding number on the `OSC_implementation.txt` file in the `modules/info` folder. 
 
-You can create as many sets as you want by simply repeating all of the above in a new folder. To control your patch via OSC you can assign the OSC name to a module using the connection object: **[main_connection 1 brds1]** will make the `brds_synth` responding on the `brds1` name. It means that you can control the parameter number 21 by sending a value to `brds1/21`. You can find a parameter list with the corresponding number on the `OSC_implementation.txt` file in the `modules/info` folder. 
+You can create as many sets as you want by simply repeating all of the above in a new folder. 
 
 ## Structure
 
