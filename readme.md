@@ -44,6 +44,8 @@ This section illustrate how to start making music with Sx4. Let's create a simpl
 * **Save it**.
   * Click on the `save` button on the preset module. This will save this song as 1. You can later recall it by clicking on the load button.
 
+You can create as many sets as you want by simply repeating all of the above in a new folder.
+
 ## Structure
 
 The heart of the system is the `main.pd` patch. All the modules can be loaded directly here or as a subprocess using the **[pd~]** object. It is possible to load many instances of a module, each identified by an ID (this is needed to avoid overwriting presets) and by an OSC name (optional). The module is connected using a  **[main_connection]** object that takes the two previous parameters as argument. For example the module **[brds_synth]** connected with the **[main_connection 2 brds_synth_2]** object will receive OSC commands as `brds_synth_2` and has ID of 2. This means that it will save its preset in the folder `presets/brds_synth/2/`.
