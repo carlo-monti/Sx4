@@ -73,7 +73,7 @@ A wrapping can contain more than one module. In this case a **[main_connection_e
 
 The loading/saving of presets (or sequences...) is done with two objects:
 
-* **[load_preset]**: this objects takes one or two creation arguments. The first one is the table name where the preset has to be written into (usually presets_$0). The second one (optional) is the preset file specification (i.e. _seq). To work properly it must be initialized with two parameters: the ID (2nd inlet) and the current_path (3rd inlet).
+* **[load_preset]**: this objects takes one or two creation arguments. The first one is the table name where the preset has to be written into (usually presets_$0). The second one (optional) is the preset file specification (i.e. `_seq`). To work properly it must be initialized with two parameters: the ID (2nd inlet) and the current_path (3rd inlet).
 As an example, the object **[load_preset presets_$0 _seq]**, with parameters ID = 2 and current_path = `/path/to/preset` works in this way: whenever it receives a number (say 5) on the first inlet it will read the file `/path/to/preset/2/5_seq.txt` into the table `presets_$0` and after that it will iterate the index-values pair of that table from the outlet.
 Usually a sound module has a preset_$0 table and it will save only one preset in the folder identified by its ID (i.e. `/presets/2/5.txt` is the preset 5 of the module with ID 2). The generation module may need to store other things such as the sequence. This is done with another load_preset object that has a second argument that represent the filename specification: something that is appended to the txt filename (as in the example above).
 
