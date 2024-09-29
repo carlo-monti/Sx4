@@ -90,7 +90,7 @@ The modules that receives or generates sound has generally four audio outputs th
 
 ### Presets
 
-Each module instance loads and saves its own presets in a dedicated folder that is named among its ID. I.e. an instance loaded with ID=12 in the set called `set_1` will save its presets in: `set_1/presets/folder/12`.  but the request of loading and saving is sent globally by the **[presets]** object. It will send the number of the preset that must be loaded (or saved) on the **[s to_all]** object.
+Each module instance loads and saves its own presets in a dedicated folder that is named among its ID. I.e. an instance loaded with ID=12 in the set called `set_1` will save its presets in: `set_1/presets/folder/12`.  The request of loading and saving is sent globally by the **[presets]** object. In the main patch tha **[presets]** object will send the number of the preset that must be loaded (or saved) on  **[s to_all]** and it is forwarded to the modules via the main connection.
 
 The presets are handled in each module via a **[pd handle_presets]** subpatch. Each parameter that should be saved has a number assigned and the module collect them and saves in a table that is written to a txt file. Similarly, to load a preset, the txt file is loaded into the table and the table is iterated to send the preset values to the patch via a router object. The routing of the iterated preset values is used also to control the parameters via OSC messages: i.e. an OSC message to control the gain (whose number is 32) is sent to the **[r control]** object, it is than routed as 32 and finally sent to the **[r preset_gain_$0]** object.
 
