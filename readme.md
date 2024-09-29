@@ -46,7 +46,7 @@ This section illustrate how to start making music with Sx4. Let's create a simpl
 * **Add OSC control**.
   * To control your patch via OSC you can assign the OSC name to a module using the connection object: **[main_connection 1 brds1]** will make the `brds_synth` responding on the `brds1` name. It means that   you can control the parameter number 21 by sending a value to `brds1/21`. You can find a parameter list with the corresponding number on the `OSC_implementation.txt` file in the `modules/info` folder. 
 
-You can create as many sets as you want by simply repeating all of the above in a new folder. 
+You can create as many sets as you want by simply repeating all of the above in a new folder. Remember that every instance of a module must have a different ID: if I want to load two `brds_synth` modules, each must have its own ID, otherwise the presets will be overwritten!
 
 ## Structure
 
