@@ -202,6 +202,7 @@ by modules that produces or process spatialized sound that are completely compat
 The main.pd file is the entry point.
 
 ## To do
+* Fix noises when changing wave on phaser/flanger
 * Add default preset for a module (i.e. load a standard piano sound...)
 * Add fade-in function for the melodic_seq
 * Build a drum machine that plays a quadraphonic sample (4 samples at a time)
