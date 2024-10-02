@@ -206,6 +206,10 @@ The main.pd file is the entry point.
 * Build a drum machine that plays a quadraphonic sample (4 samples at a time)
 * Check drum_machine sample rate
 * Key tracking for the filter
+* Check fm_synth adsr and substitute it with the one on the commons folder
+* Fix reverse mode on phase_looper
+* Fix hipass filter
+* Fix all the randomization in drum_machine as a multiplication
 
 ## References
 Sx4 is heavily based on the following projects:
