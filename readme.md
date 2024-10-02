@@ -203,6 +203,9 @@ The main.pd file is the entry point.
 ## To do
 * Add default preset for a module (i.e. load a standard piano sound...)
 * Add fade-in function for the melodic_seq
+* Build a drum machine that plays a quadraphonic sample (4 samples at a time)
+* Check drum_machine sample rate
+* Key tracking for the filter
 
 ## References
 Sx4 is heavily based on the following projects:
