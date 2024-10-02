@@ -202,6 +202,7 @@ by modules that produces or process spatialized sound that are completely compat
 The main.pd file is the entry point.
 
 ## To do
+* Fix dry wet flanger
 * Fix flanger click (substitute guts with mine)
 * Fix phases in square wave on LFO (there isn't any phase!)
 * Fix noises when changing wave on phaser/flanger
