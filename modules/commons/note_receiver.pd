@@ -1,0 +1,6 @@
+#N canvas 52 20 1854 977 12;
+#X obj 316 133 route \$1;
+#X obj 315 167 outlet;
+#X obj 316 108 r notes_from_router;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;

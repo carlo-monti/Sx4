@@ -1,0 +1,17 @@
+#N canvas 502 181 1390 805 10;
+#X obj 99 -76 osc~;
+#X obj 60 -242 inlet~;
+#X obj 86 120 outlet~;
+#X obj 84 -30 *~;
+#X obj 119 -242 inlet;
+#X obj 206 -191 cnv 1 1 68 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
+#X obj 168 -105 * 5000;
+#X obj 267 -240 inlet;
+#X obj 267 -217 switch~;
+#X connect 0 0 3 1;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X coords 0 805 1 804 200 70 0;

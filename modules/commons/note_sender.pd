@@ -1,0 +1,8 @@
+#N canvas 875 415 450 300 12;
+#X obj 129 159 inlet;
+#X obj 129 184 list prepend \$1;
+#X obj 129 209 list trim;
+#X obj 129 234 s notes_to_router;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
