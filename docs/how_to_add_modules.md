@@ -1,3 +1,45 @@
+## Structure
+
+The heart of the system is the `main.pd` patch. All the modules can be loaded directly here or as a subprocess using the **[pd~]** object. It is possible to load many instances of a module, each identified by an ID (this is needed to avoid overwriting presets) and by an OSC name (optional). The module is connected using a  **[main_connection]** object that takes the two previous parameters as argument. For example the module **[brds_synth]** connected with the **[main_connection 2 brds_synth_2]** object will receive OSC commands as `brds_synth_2` and has ID of 2. This means that it will save its preset in the folder `presets/brds_synth/2/`.
+
+A main patch must contain this objects:
+
+* **[osc_connection]**: this handles the OSC communication
+
+* **[presets]**: this asks the other modules to load and save their preset. It also checks the last preset saved to avoid overwriting.
+
+* **[note_router]**: this object receives notes from the generators and routes it to the connected instruments. It allows to select the source for a particular instrument (a instrument should have max 1 source).
+
+* **[song_handler]**: this objects sets the global tempo and the global volume.
+
+* **[output]**: this objects sends the 4 outputs of a module to the dac scaling the volume or merging to stereo.
+
+## Modules
+
+A module is a patch that generates notes (such a melody or a chord sequence) or that generates sound. Each module should have a **[main_connection]** object connected to its inlet. This sets the ID and the OSC name of the module. It also allow the module to receive the messages that are sent via the **[s to_all]** object: this messages are:
+
+* **bang_bpm**: a number representing the midi_clock period of the main clock (24 ppqn). It acts also as a midi_clock pulse.
+
+* **rst**: a `0` sent whenever the clock starts.
+
+* **load** or **save**: a number that represents the preset to load (or save).
+
+The **[main_connection]** object also allow the receipt of the notes and the OSC messages. Moreover, each object should have a **[s osc_out]** object to its rightmost outlet. This allow the object to send out already formatted OSC messages to the OSC receiver.
+
+### Messages
+
+Each module receives messages from a single inlet and routes it: a bang_bpm, a note, an OSC message... In the top left of each patch there should be objects to do this. Similarly in the bottom right there should be something that puts out the formatted OSC messages.
+
+### Note generation
+
+The modules that generates notes will output notes with midi note number and velocity, usually from their leftmosts outlet. For example **[60 106(** is a C4 note on message with velocity of 106 and **[69 0(** is a note off message for the midi note A4. The module can also produce a message  of **[all_notes_off(**. The rightmost outlet puts out (already formatted!) OSC messages.
+
+The generation modules are usually kept in the `main.pd` patch and are connected to the **[note_router]** object via a **[note_sender]** object with its ID specified as first argument. Similarly a sound generation module receives notes via a **[note_receiver]** object (with ID). The router object will handle the routing. The **[note_receiver]** object should be connected on the first inlet of the **[main_connection]** object.
+
+### Sound generation
+
+The modules that receives or generates sound has generally four audio outputs that should be individually connected to the **[s~ to_dac_1]** (or 2, or 3, ...) object. Be careful to avoid clipping by mixing many outlets! The audio outlets are usually put to the left while the rightmost outlet puts out (already formatted!) OSC messages.
+
 ## Adding modules
 
 To build a new module you can start from the template on the `templates` folder. 
