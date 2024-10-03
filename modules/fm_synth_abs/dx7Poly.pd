@@ -1,4 +1,4 @@
-#N canvas 288 113 1126 660 10;
+#N canvas 2510 243 1126 660 10;
 #X obj 273 250 *~ 0.25;
 #X obj 6 60 pmOsc 1;
 #X obj 43 37 r \$0-oscMsgs;

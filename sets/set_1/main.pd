@@ -1,4 +1,4 @@
-#N canvas 415 23 1390 805 12;
+#N canvas 52 20 1854 977 12;
 #X declare -path ../../modules -path ../../modules/commons;
 #X obj 507 -94 melodic_seq;
 #X obj 508 116 melodic_seq;
@@ -46,7 +46,11 @@
 #X obj 211 70 notein;
 #X obj 219 108 pack 0 0;
 #X obj 214 158 note_sender 4;
-#X obj -40 456 main_connection_ext_1 drum_machine_wrap.pd 3 dm, f 70;
+#X msg -30 231 load_init 0;
+#X obj -30 256 s to_all;
+#X obj -39 454 main_connection_ext_1 fm_synth_wrap.pd 3 fm, f 70;
+#X msg -29 189 load 0;
+#X msg 17 141 save 0;
 #X connect 0 0 8 0;
 #X connect 0 1 6 0;
 #X connect 1 0 10 0;
@@ -56,7 +60,7 @@
 #X connect 2 2 14 0;
 #X connect 3 0 4 0;
 #X connect 3 0 39 0;
-#X connect 9 0 46 0;
+#X connect 9 0 48 0;
 #X connect 16 0 29 0;
 #X connect 22 0 21 0;
 #X connect 25 0 41 0;
@@ -82,4 +86,7 @@
 #X connect 43 0 44 0;
 #X connect 43 1 44 1;
 #X connect 44 0 45 0;
-#X connect 46 0 31 0;
+#X connect 46 0 47 0;
+#X connect 48 0 31 0;
+#X connect 49 0 47 0;
+#X connect 50 0 47 0;

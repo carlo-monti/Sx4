@@ -39,7 +39,7 @@
 #X connect 16 0 3 0;
 #X connect 17 0 20 0;
 #X connect 18 0 0 0;
-#X connect 19 0 17 1;
+#X connect 19 0 17 0;
 #X connect 20 0 18 0;
 #X connect 21 0 17 0;
 #X coords 0 715 1 714 135 25 0;

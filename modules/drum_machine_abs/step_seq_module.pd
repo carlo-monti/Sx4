@@ -1,4 +1,4 @@
-#N canvas 203 132 1390 715 12;
+#N canvas 1128 151 1390 715 12;
 #X declare -path ../commons;
 #X obj -107 214 tabwrite seq_main_\$0;
 #X obj 1071 790 == 1;
@@ -224,10 +224,10 @@
 #X obj 106 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 132 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 158 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
-#X obj 184 105 tgl 20 0 empty empty empty 0 -10 0 12 #000000 #000000 #000000 0 1;
+#X obj 184 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 210 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 236 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
-#X obj 262 105 tgl 20 0 empty empty empty 0 -10 0 12 #000000 #000000 #000000 0 1;
+#X obj 262 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 288 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X msg 108 258 \$1 0;
 #X msg 118 258 \$1 1;
@@ -671,7 +671,7 @@
 #X obj 522 899 loadbang;
 #X obj 325 350 r to_samp_n_\$0;
 #X obj 327 329 s from_samp_n_\$0;
-#N canvas 277 123 1150 805 handle_sample_selection 0;
+#N canvas 682 111 1150 805 handle_sample_selection 1;
 #X obj 247 105 i;
 #X obj 417 105 i;
 #X obj 449 111 - 1;
@@ -725,7 +725,7 @@
 #X msg 508 208 0;
 #X obj 793 486 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 475 805 list append;
-#X obj 466 573 t a a;
+#X obj 475 556 t a a;
 #X obj 478 854 list prepend;
 #X obj 478 825 list trim;
 #X obj 478 875 list trim;
@@ -733,12 +733,14 @@
 #X obj 478 894 print;
 #X msg 590 792 sample_\$3;
 #X msg 577 886 read -resize;
-#X obj 512 670 makefilename %s/%%s;
-#X msg 512 695 set \$1;
+#X obj 488 710 makefilename %s/%%s;
+#X msg 488 735 set \$1;
 #X obj 648 740 print;
-#X obj 474 721 makefilename tbd;
-#X msg 467 601 symbol dm_samples/\$2/\$1.wav;
-#X obj 512 641 r current_path_\$0;
+#X obj 475 765 makefilename tbd;
+#X msg 475 600 symbol dm_samples/\$2/\$1.wav;
+#X obj 488 681 r current_path_\$0;
+#X obj 713 598 loadbang;
+#X msg 713 622 symbol ./std_samples;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 49 0;
@@ -813,6 +815,8 @@
 #X connect 64 0 52 0;
 #X connect 65 0 64 0;
 #X connect 66 0 61 0;
+#X connect 67 0 68 0;
+#X connect 68 0 61 0;
 #X restore 2413 -557 pd handle_sample_selection;
 #X obj 466 671 s micro_wide_pitch_\$0;
 #X obj 2091 1094 r micro_wide_pitch_\$0;
