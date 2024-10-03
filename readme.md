@@ -91,22 +91,6 @@ The generation modules are usually kept in the `main.pd` patch and are connected
 
 The modules that receives or generates sound has generally four audio outputs that should be individually connected to the **[s~ to_dac_1]** (or 2, or 3, ...) object. Be careful to avoid clipping by mixing many outlets! The audio outlets are usually put to the left while the rightmost outlet puts out (already formatted!) OSC messages.
 
-### Presets
-
-Each module instance loads and saves its own presets in a dedicated folder that is named among its ID. I.e. an instance loaded with ID=12 in the set called `set_1` will save its presets in: `set_1/presets/folder/12`.  The request of loading and saving is sent globally by the **[presets]** object. In the main patch tha **[presets]** object will send the number of the preset that must be loaded (or saved) on  **[s to_all]** and it is forwarded to the modules via the main connection.
-
-The presets are handled in each module via a **[pd handle_presets]** subpatch. Each parameter that should be saved has a number assigned and the module collect them and saves in a table that is written to a txt file. Similarly, to load a preset, the txt file is loaded into the table and the table is iterated to send the preset values to the patch via a router object. The routing of the iterated preset values is used also to control the parameters via OSC messages: i.e. an OSC message to control the gain (whose number is 32) is sent to the **[r control]** object, it is than routed as 32 and finally sent to the **[r preset_gain_$0]** object.
-
-There are also some paramers that should not be saved but needs to be controlled via OSC (such as momentary buttons...). This is handled in the same way but in this case the object is called **[r ctrl_value]** and its code should start from 100. Similarly there are some informations that needs to be puts out without being saved. This are handled via ad-hoc configuration that receives message from the **[s fdbk_value]** object.
-
-The loading/saving of presets (or sequences...) is done with two objects:
-
-* **[load_preset]**: this objects takes one or two creation arguments. The first one is the table name where the preset has to be written into (usually presets_$0). The second one (optional) is the preset file specification (i.e. `_seq`). To work properly it must be initialized with two parameters: the ID (2nd inlet) and the current_path (3rd inlet). The fourth inlet lets you set the filname specification.
-As an example, the object **[load_preset presets_$0 _seq]**, with parameters ID = 2 and current_path = `/path/to/preset` works in this way: whenever it receives a number (say 5) on the first inlet it will read the file `/path/to/preset/2/5_seq.txt` into the table `presets_$0` and after that it will iterate the index-values pair of that table from the outlet.
-Usually a sound module has a preset_$0 table and it will save only one preset in the folder identified by its ID (i.e. `/presets/2/5.txt` is the preset 5 of the module with ID 2). The generation module may need to store other things such as the sequence. This is done with another load_preset object that has a second argument that represent the filename specification: something that is appended to the txt filename (as in the example above).
-
-* **[save_preset]**: this object takes two or three creation arguments. The first is the table name, the second one is the number of preset values that has to be saved and the third is the filename specification (optional). As the load_preset object, it needs ID and current_path as parameters. The fourth and the fifth inlets lets you set dinamically the number of presets and the filename specification. Whenever it receives a number in its 1st inlet, it will collect the preset values stored in the preset table. 
-
 
 ### Subprocess
 
