@@ -1017,7 +1017,7 @@
 #X text 1005 -62 variation;
 #N canvas 101 69 450 250 (subpatch) 0;
 #X array Seq2_\$0 16 float 3;
-#A 0 74 0 0 69 0 64 77 71 67 62 77 69 77 0 0 67;
+#A 0 0 65 0 0 72 65 67 65 71 0 0 71 72 64 60 74;
 #X coords 0 90 16 0 200 100 2 0 0;
 #X restore 627 135 graph;
 #X obj 1408 -50 f \$0;
@@ -1765,7 +1765,7 @@
 #X obj 253 -421 s sel_tonality_\$0;
 #X obj 273 -388 s sel_octave_\$0;
 #X obj 38 715 moses 1;
-#X obj 627 124 cnv 10 200 10 empty first_beat_\$0 empty 20 12 0 8 #000000 #404040 0;
+#X obj 627 124 cnv 10 200 10 empty first_beat_\$0 empty 20 12 0 8 #e0e0e0 #404040 0;
 #X obj 93 500 f \$0;
 #X obj 57 532 f \$0;
 #X obj 37 469 sel 0;
@@ -2088,6 +2088,7 @@
 #X obj 198 849 r ext_rst_\$0;
 #X obj 228 -793 s load_init_\$0;
 #X obj -203 -826 route bang_bpm rst instance_id load save osc_name osc current_path init, f 93;
+#X floatatom -12 149 5 0 0 0 - - - 0;
 #X connect 0 0 1 0;
 #X connect 0 0 2 0;
 #X connect 1 0 0 1;
@@ -2129,6 +2130,7 @@
 #X connect 24 0 44 0;
 #X connect 27 0 28 0;
 #X connect 27 0 121 0;
+#X connect 27 0 246 0;
 #X connect 27 1 29 0;
 #X connect 27 1 122 0;
 #X connect 27 3 190 0;

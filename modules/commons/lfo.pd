@@ -422,7 +422,7 @@
 #X obj 924 436 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 950 436 loadbang;
 #X msg 814 457 \; division_label_\$2 label \$1;
-#X obj 148 164 cnv 5 5 5 empty division_label_\$0 0.05_Hz 0 0 0 10 #fcfcfc #404040 0;
+#X obj 148 164 cnv 5 5 5 empty division_label_\$0 6.5x 0 0 0 10 #fcfcfc #404040 0;
 #X obj 139 149 cnv 5 5 5 empty mul_label_\$0 1x 0 0 0 10 #fcfcfc #404040 0;
 #X obj 1088 751 f \$0;
 #X obj 1018 751 pack s 0;
@@ -562,7 +562,7 @@
 #X msg -100 706 \; division_label_\$2 label \$1;
 #X obj -76 614 spigot;
 #X obj -76 580 f;
-#X obj -31 574 r sync_\$0;
+#X obj -23 483 r sync_\$0;
 #X obj -55 530 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj -19 600 == 0;
 #X obj -101 680 pack s 0;
@@ -585,6 +585,9 @@
 #X text 943 962 phase;
 #X text 1004 961 showtime;
 #X obj 336 835 *~;
+#X obj 620 377 t f b;
+#X obj 770 226 / 127;
+#X obj 770 249 * 27;
 #X connect 0 0 3 0;
 #X connect 0 0 4 0;
 #X connect 0 0 34 0;
@@ -641,8 +644,7 @@
 #X connect 53 0 99 0;
 #X connect 54 0 24 0;
 #X connect 54 0 101 0;
-#X connect 60 0 61 0;
-#X connect 60 2 112 0;
+#X connect 60 0 167 0;
 #X connect 60 7 136 0;
 #X connect 61 0 62 0;
 #X connect 62 0 63 0;
@@ -654,8 +656,8 @@
 #X connect 66 0 70 0;
 #X connect 67 0 66 0;
 #X connect 71 0 29 0;
-#X connect 72 0 60 3;
 #X connect 72 0 125 0;
+#X connect 72 0 60 3;
 #X connect 73 0 1 0;
 #X connect 74 0 75 0;
 #X connect 74 0 84 0;
@@ -702,7 +704,7 @@
 #X connect 120 0 20 0;
 #X connect 121 0 21 0;
 #X connect 123 0 22 0;
-#X connect 124 0 60 4;
+#X connect 124 0 168 0;
 #X connect 125 0 124 0;
 #X connect 128 0 60 0;
 #X connect 130 0 26 0;
@@ -732,4 +734,8 @@
 #X connect 166 0 131 0;
 #X connect 166 0 36 1;
 #X connect 166 0 113 0;
+#X connect 167 0 61 0;
+#X connect 167 1 112 0;
+#X connect 168 0 169 0;
+#X connect 169 0 60 4;
 #X coords 0 -1 1 1 120 75 2 100 100;
