@@ -77,7 +77,6 @@ It has many pages, each corresponding to a module (more or less). To be easily m
 * Build a drum machine that plays a quadraphonic sample (4 samples at a time)
 * Check drum_machine sample rate
 * Key tracking for the filter
-* Fix 440 multiple notes
 * Fix reverse mode on phase_looper
 * Fix hipass filter
 * Fix all the randomization in drum_machine as a multiplication
