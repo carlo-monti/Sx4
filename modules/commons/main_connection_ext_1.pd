@@ -29,7 +29,7 @@
 #X obj 81 572 list prepend pd~ start;
 #X obj 122 58 symbol;
 #X obj 121 112 list trim;
-#X obj 180 58 r current_path;
+#X obj 115 17 r current_path;
 #X obj 121 87 list prepend current_path symbol;
 #X msg 189 514 set \$1;
 #X obj 80 544 makefilename;
@@ -70,7 +70,7 @@
 #X connect 27 0 20 0;
 #X connect 28 0 31 0;
 #X connect 29 0 35 0;
-#X connect 30 0 28 1;
+#X connect 30 0 28 0;
 #X connect 31 0 29 0;
 #X connect 32 0 33 0;
 #X connect 33 0 27 0;

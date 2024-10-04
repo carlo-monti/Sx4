@@ -3,19 +3,7 @@
 
 ## What is it
 
-Sx4 is a musical making system designed to exploit the power of a quadraphonic speaker setting. It is a kind of a framework: it is componed of many modules that can save presets globally and that can also be controlled via OSC. The modules are fully built instruments. You can think of it this way: Sx4 can be used to build a fixed instrument set (i.e. two subtractive synths, one fm synth, two sequencers, etc.) and use it to make songs that can be saved and recalled.  This project, so far, consist of the following modules:
-
-* **melodic_seq**: is a melodic sequence generator. It can generate a random sequence of (max) 32 steps that can be varied througout the performance.
-
-* **chords_seq**: is a chord sequence generator. It can generate a chord sequence of (max) 8 bars, add pattern and traspositions.
-
-* **brds_synth**: is a polyphonic subtractive synth based on the Mutable Instruments Beards oscillator and on the Rings resonator. 
-
-* **fm_synth**: is a polyphonic phase modulation synth: a clone of the DX7.
-
-* **drum_machine**: is a 4 tracks sample based drum machine with a Kaoss Pad style xy effect.
-
-* **quad_effects**: is a fx chain that includes: chorus, phaser, flanger, delays, granulator (M.I. Clouds) and reverbs.
+Sx4 is a musical making system designed to exploit the power of a quadraphonic speaker setting. It is a kind of a framework: it is componed of many modules that can save presets globally and that can also be controlled via OSC. The modules are fully built instruments. You can think of it this way: Sx4 can be used to build a fixed instrument set (i.e. two subtractive synths, one fm synth, two sequencers, etc.) and use it to make songs that can be saved and recalled. Sx4 is something like a "live oriented" DAW: it allows you to build a dynamic structure of instruments whose initial settings are globally saved and that are intended to be "tweaked" during live performances.
 
 ## Getting started
 
@@ -46,21 +34,54 @@ This section illustrate how to start making music with Sx4. Let's create a simpl
 * **Add OSC control**.
   * To control your patch via OSC you can assign the OSC name to a module using the connection object: **[main_connection 1 brds1]** will make the `brds_synth` responding on the `brds1` name. It means that   you can control the parameter number 21 by sending a value to `brds1/21`. You can find a parameter list with the corresponding number on the `OSC_implementation.txt` file in the `modules/info` folder.
   * The connection is handled by the object **[osc_connection]** in the main patch. The patch (the server) will listen on port 3000 and sends on 192.168.1.33:4000. If `localhost` is flagged, it will send on 127.0.0.1.
+ 
+Now you can start making music with your new instrument set: find a sound, find a sequence, route it to the selected instrument... When you are happy, press the `save` button. This will save what you created with a number. You can recall it later by selecting the number and pressing the `load` button. 
+From now on you should not modify your set because you will risk to overwrite what you already saved.
 
-You can create as many sets as you want by simply repeating all of the above in a new folder. Remember that every instance of a module must have a different ID: if I want to load two `brds_synth` modules, each must have its own ID, otherwise the presets will be overwritten!
+You can create as many sets as you want by simply repeating all of the above creating a new folder in the `sets` folder. Remember that every instance of a module must have a different ID: if I want to load two `brds_synth` modules, each must have its own ID, otherwise the presets will be overwritten!
 
+## Dig deeper
 
+The heart of the system is the `main.pd` patch. All the modules can be loaded directly here or as a subprocess using the **[pd~]** object. It is possible to load multiple instances of a module, each identified by an ID (used to store presets) and by an OSC name (optional). The module is connected using a  **[main_connection]** object that takes the two previous parameters as argument. For example the module **[brds_synth]** connected with the **[main_connection 2 brds_synth_2]** object will receive OSC commands as `brds_synth_2` and has ID of 2. This means that it will save its preset in the folder `presets/brds_synth/2/`.
+
+The main patch must contain this objects:
+
+* **[main_osc_connection]**: this handles the OSC communication
+
+* **[main_preset_handler]**: this asks the other modules to load and save their preset. It also checks the last preset saved to avoid overwriting.
+
+* **[main_song_handler]**: this objects sets the global tempo and the global volume.
+
+* **[main_output]**: this objects sends the 4 outputs of a module to the dac scaling the volume or merging to stereo.
+
+### Modules
+
+A module is a patch that generates notes (such a melody or a chord sequence) or that generates sound. Each module should have a **[main_connection]** object connected to its inlet. This sets the ID and the OSC name of the module when the init button is pressed. This also allow the module to receive the messages that are sent via the **[s to_all]** object.
+
+The **[main_connection]** object also allow the receipt of the notes and the OSC messages. Moreover, each object should have a **[s osc_out]** object to its rightmost outlet. This allow the object to send out already formatted OSC messages to the OSC receiver.
+
+### Note generation
+
+The modules that generates notes will output notes with midi note number and velocity, usually from their leftmosts outlet. For example **[60 106(** is a C4 note on message with velocity of 106 and **[69 0(** is a note off message for the midi note A4. The module can also produce a message  of **[all_notes_off(**. The rightmost outlet puts out (already formatted!) OSC messages.
+
+The generation modules are usually kept in the `main.pd` patch and are connected to the **[note_router]** object via a **[note_sender]** object with its ID specified as first argument. Similarly a sound generation module receives notes via a **[note_receiver]** object (with ID). The router object will handle the routing. The **[note_receiver]** object should be connected on the first inlet of the **[main_connection]** object.
+
+### Sound generation
+
+The modules that receives or generates sound has generally four audio outputs. The audio outlets are usually put to the left while the rightmost outlet puts out (already formatted!) OSC messages. To output sound you should connect the 4 outputs of the module to the **[main_output]** object. This will forward the output directly to the dac. Be careful to avoid clipping by mixing many outlets! 
 
 ## Folder structure
 This is the folder structure of the whole project. It is organized in such a way that every update or exporting sets is done by drop-in (copy-paste) a folder. 
 
-### Sets folder
-The `sets` folder contains a subfolder for each set. Each folder can be freely named and it must contain a `presets` folder in which all the instances of modules will store their presets.
 ```bash
 Sx4
 ├── modules
 │   ├── commons
 │   ├── module_1_abs/
+│   │   ├── factory_presets/
+│   │   │   ├── 0.txt
+│   │   │   ├── 1.txt
+│   │   │   └── [...]
 │   │   ├── abs1-1.pd
 │   │   ├── abs1-2.pd
 │   │   └── [...]
@@ -94,23 +115,23 @@ Sx4
 └── templates
 ```
 
+The `sets` folder contains a subfolder for each set. Each folder can be freely named and it must contain a `presets` folder in which all the instances of modules will store their presets. 
 
+The `modules` folder contains the available modules and the wrappings to be loaded as subprocess. The modules that starts with `main_` are modules that must be used only in the main patch (they used global sends). Each module has a folder named `modules/module_name_abs` in which there are abstraction used by it, its factory presets and other similar things. The `modules/commons` folder contains abstractions that are used by all the modules.
 
+The `templates` folder contains templates for building new modules.
 
-## To do
-* Fix dry wet flanger
-* Fix flanger click (substitute guts with mine)
-* Fix phases in square wave on LFO (there isn't any phase!)
-* Fix noises when changing wave on phaser/flanger
-* Add default preset for a module (i.e. load a standard piano sound...)
-* Add fade-in function for the melodic_seq
-* Build a drum machine that plays a quadraphonic sample (4 samples at a time)
-* Check drum_machine sample rate
-* Key tracking for the filter
-* Check fm_synth adsr and substitute it with the one on the commons folder
-* Fix reverse mode on phase_looper
-* Fix hipass filter
-* Fix all the randomization in drum_machine as a multiplication
+## The modules
+
+You can find a list of the modules [here](./docs/modules.md).
+
+## Extending Sx4
+
+You can find info on how to create new modules [here](./docs/improve.md).
+
+## Client-server
+
+You can find info on how to create a client-server configuration [here](./docs/client_server.md).
 
 ## References
 Sx4 is heavily based on the following projects:
