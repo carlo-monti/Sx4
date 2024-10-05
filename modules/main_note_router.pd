@@ -118,10 +118,14 @@
 #X obj 421 390 r ID_\$0;
 #X obj 486 390 r current_path;
 #X text 415 455 set n of presets;
-#X obj 1099 409 table presets_\$0 10;
+#X obj 817 225 table presets_\$0 10;
 #X obj 813 674 route 0 1 2 3 4 5 6 7 8 9, f 28;
 #X obj 817 437 load_preset presets_\$0;
 #X obj 401 429 save_preset presets_\$0 9;
+#X obj 1065 432 load_init presets_\$0 main_note_router_abs;
+#X obj 1065 399 r load_init_\$0;
+#X obj 29 439 save_init presets_\$0 main_note_router_abs 9;
+#X msg 23 382 0;
 #X connect 1 0 40 0;
 #X connect 2 0 40 0;
 #X connect 3 0 40 0;
@@ -187,6 +191,8 @@
 #X connect 66 7 56 0;
 #X connect 66 8 57 0;
 #X connect 67 0 66 0;
+#X connect 70 0 69 0;
+#X connect 72 0 71 0;
 #X restore 475 -285 pd handle_presets;
 #X obj 293 558 list trim;
 #X obj 440 562 list trim;

@@ -50,7 +50,22 @@ When the init button is pressed (on the main patch):
 ### Setup init
 
 The init system can also be used to create some "factory presets" by simply creating other files `.txt` in the same folder and loading them. To save a configuration as preset (also as init: preset 0)
-there is an object named **[save_init]**. Similarly to **[load_init]** it takes the preset table, the abs folder and the file specification as arguments. It also takes one more argument: the number of presets. I.e. the object **[save_init presets_$0 brds_synth_abs 34 _d]** when it receives in input the number 0, saves the file `0_d.txt` in the `brds_synth_abs/factory_presets` folder collecting 34 values from the table `presets_$0`.
+there is an object named **[save_init]**. Similarly to **[load_init]** it takes the preset table, the abs folder and the file specification as arguments. It also takes one more argument: the number of presets. I.e. the object **[save_init presets_$0 brds_synth_abs 34 _d]** when it receives in input the number 0, saves the file `0_d.txt` in the `brds_synth_abs/factory_presets` folder collecting 34 values from the table `presets_$0`. This object can be activated only opening the patch and clicking on the number message connected to it.
+
+### Handle multiple submodules
+
+As the `drum_machine` shows, a module can be built using multiple similar submodules. In this case the presets and the init should be handled carefully. 
+
+Let's recap how the preset and init thing work in a simple module. In this case, when the module receives a `load_preset` or `save_preset` number on the first inlet, it will forward this number to the **[r load_$0]** or **[r save_$0]** objects and they will activate the object **[load_preset]** (or **[save_preset]**) that will save (or load) the preset file in the folder of the current set that has the name of the ID of the module. The loading of the init preset works in a similar way: a message of `load_preset 0` is received in the input, it is then forwarded to the object that will load the file from the `modules/module_name_abs/factory_preset` folder. The saving can be done only by opening the patch and clickin on the message.
+
+When there are multiple submodules, the things are a little bit tricky. In this case the saving of the preset is done from the patch that join all the submodules. Here the message containing `0` is sent to the object **[r save_init_$0]** inside the preset handler subpatch (if any) and also forwarded as `save_init 0` to the submodules inlet. Here the message is routed to the same  **[r save_init_$0]** inside the preset handler subpatch of the submodule that will save it adding the `module_id` at the end of the filename. It also save the sequence in a different file. In the end the files inside the `modules/drum_machine_abs/factory_presets` are:
+* 0.txt
+* 0_1.txt
+* 0_1_seq.txt
+* 0_2.txt
+* 0_2_seq.txt
+* [...]
+where `0.txt` is the preset file for the module, `0_1.txt` is the preset file for the submodule with the module_id of 1, `0_1_seq.txt` is the preset file for the sequence of the submodule 1, and so on...
 
 ### Subprocess and wrapping
 
@@ -69,6 +84,7 @@ It has many pages, each corresponding to a module (more or less). To be easily m
 
 
 ## To do
+* Move the osc parsing inside the main connection object (?)
 * Fix dry wet flanger
 * Fix flanger click (substitute guts with mine)
 * Fix phases in square wave on LFO (there isn't any phase!)

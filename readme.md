@@ -42,11 +42,12 @@ You can create as many sets as you want by simply repeating all of the above cre
 
 ## Dig deeper
 
-The heart of the system is the `main.pd` patch. All the modules can be loaded directly here or as a subprocess using the **[pd~]** object. It is possible to load multiple instances of a module, each identified by an ID (used to store presets) and by an OSC name (optional). The module is connected using a  **[main_connection]** object that takes the two previous parameters as argument. For example the module **[brds_synth]** connected with the **[main_connection 2 brds_synth_2]** object will receive OSC commands as `brds_synth_2` and has ID of 2. This means that it will save its preset in the folder `presets/brds_synth/2/`.
+The heart of the system is the `main.pd` patch within a set folder. All the modules can be loaded directly here or as a subprocess using the **[pd~]** object. It is possible to load multiple instances of a module, each identified by an ID (used to store presets) and by an OSC name (optional). The modules whose name starts with `main_` must be loaded only once in the main patch (no multiple instances!). 
 
+Each module must be connected using a  **[main_connection]** object that takes the two previous parameters as argument. For example the module **[brds_synth]** connected with the **[main_connection 2 brds_synth_2]** object will receive OSC commands as `brds_synth_2` and has ID of 2 (this means that it will save its preset in the folder `presets/brds_synth/2/`). Moreover, each object should have a **[s osc_out]** object to its rightmost outlet. This allow the object to send out already formatted OSC messages to the OSC receiver.
+
+### The main patch
 The main patch must contain this objects:
-
-* **[main_osc_connection]**: this handles the OSC communication
 
 * **[main_preset_handler]**: this asks the other modules to load and save their preset. It also checks the last preset saved to avoid overwriting.
 
@@ -54,11 +55,28 @@ The main patch must contain this objects:
 
 * **[main_output]**: this objects sends the 4 outputs of a module to the dac scaling the volume or merging to stereo.
 
-### Modules
+* **[main_osc_handler]**: this handles the OSC communication (optional)
 
-A module is a patch that generates notes (such a melody or a chord sequence) or that generates sound. Each module should have a **[main_connection]** object connected to its inlet. This sets the ID and the OSC name of the module when the init button is pressed. This also allow the module to receive the messages that are sent via the **[s to_all]** object.
+### What happens
+Once the connections are done, you can press the `start everything` button in the main patch. This do this routine:
 
-The **[main_connection]** object also allow the receipt of the notes and the OSC messages. Moreover, each object should have a **[s osc_out]** object to its rightmost outlet. This allow the object to send out already formatted OSC messages to the OSC receiver.
+* It sends the current path to the connection object: this is the absolute path to the `main.pd` file. The connection objects forward this info to the modules already loaded in the main patch or uses it to build the path for loading the subprocess modules.
+
+* It ask the connection_ext object to start the subprocesses
+
+* It waits for 2000ms for the external modules to be loaded
+
+* It sends the init message to all the connection objects in the main patch (and also to the all the other `main_` modules). The connection objects sends the `instance_id`, the `osc_name` and the `current_path` to the modules. It also sends the `load_init 0` message.
+
+From now on, all the modules are ready and will receive commands from their **[main_connection]** object. This works this way:
+
+* OSC messages: the messages from the network are collected by the **[main_osc_handler]**. This will send the OSC message to the **[main_connection]** objects that will forward them to the modules that will do the parsing.
+
+* Tempo messages: the global `bang_bpm` and `rst` messages from the **[main_song_handler]** are sent to the **[main_connection]** objects that will forward them to the modules.
+
+* Global volume: the `global_vol` and `global_merge` messages from the **[main_song_handler]** are sent to the **[output]** objects that will use it to scale the volume to the dac~ or to merge the channels.
+
+The **[main_connection]** also allows the module to receive the messages that are sent via the **[s to_all]** object.
 
 ### Note generation
 

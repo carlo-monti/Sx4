@@ -1,0 +1,11 @@
+#N canvas 875 415 450 300 12;
+#X obj 129 184 list prepend \$1;
+#X obj 129 209 list trim;
+#X obj 129 234 s notes_to_router;
+#X obj 128 104 notein;
+#X obj 135 140 pack 0 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 4 0 0 0;

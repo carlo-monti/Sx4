@@ -14,7 +14,7 @@
 #X obj 436 182 *~;
 #X obj 472 182 *~;
 #X obj 532 88 r to_all;
-#X obj 532 112 route vol_glob stereo_merge;
+#X obj 532 112 route global_volume global_stereo_merge;
 #X connect 0 0 5 0;
 #X connect 1 0 6 0;
 #X connect 2 0 7 0;
