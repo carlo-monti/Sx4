@@ -86,6 +86,8 @@ It has many pages, each corresponding to a module (more or less). To be easily m
 ## To do
 * Move the osc parsing inside the main connection object (?)
 * Fix dry wet flanger
+* Add detune function for synths for using in combo. It will be dependent on ID: if even positive, if odd negative.
+* Fix lfo assign in modules
 * Fix flanger click (substitute guts with mine)
 * Fix phases in square wave on LFO (there isn't any phase!)
 * Fix noises when changing wave on phaser/flanger
