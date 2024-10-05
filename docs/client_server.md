@@ -40,4 +40,4 @@ Here are the instruction to build a headless server that runs Sx4 controlled by 
      jack_control start
      ```
 
-* Launch the patch `pd -nogui -jack -outchannels 4 main.pd`
+* Launch the patch `pd -nogui -jack -send ";auto_start 1" -outchannels 4 path/to/main.pd`
