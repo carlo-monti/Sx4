@@ -76,6 +76,8 @@ From now on, all the modules are ready and will receive commands from their **[m
 
 * Global volume: the `global_vol` and `global_merge` messages from the **[main_song_handler]** are sent to the **[output]** objects that will use it to scale the volume to the dac~ or to merge the channels.
 
+* Presets: the `load` and `save` messages from the **[main_presets_handler]** are sent to the **[main_connection]** objects that will forward them to the modules.
+
 The **[main_connection]** also allows the module to receive the messages that are sent via the **[s to_all]** object.
 
 ### Note generation
