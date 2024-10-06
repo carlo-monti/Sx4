@@ -62,4 +62,3 @@ Chain: define where the feedback of a delay is sent. I.e. "the output of the fir
 Diffusion: define if the output of a delay should follow strictly the chain or can be "diffused" also to other destination. I.e. if diffusion is set to high, the output of the first delay goes to the input of delay 2 but also a little to the input of 3 and 4 (depending on the selected chain).
 
 Mono: all the inputs goes to the first delay (TO DO!)
-

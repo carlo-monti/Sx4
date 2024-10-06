@@ -1,6 +1,6 @@
 #N canvas 52 20 1854 977 12;
 #X declare -path ./commons -path ./quad_effects_abs;
-#N canvas 299 106 1390 715 handle_presets 0;
+#N canvas 52 20 1854 1097 handle_presets 1;
 #X obj 119 1066 tabwrite presets_\$0;
 #X msg 433 556 \$1 1;
 #X msg 433 533 \$1 0;
@@ -96,13 +96,13 @@
 #X obj 1043 603 r control_\$0;
 #X obj 472 1138 r vol_glob_\$0;
 #X obj 1285 872 s preset_vol_glob_\$0;
-#X obj 1813 717 s control_rst_filter_\$0;
-#X obj 1839 745 s control_rst_pitch_\$0;
+#X obj 697 1211 s control_rst_filter_\$0;
+#X obj 723 1239 s control_rst_pitch_\$0;
 #X obj 46 1357 s control_out_\$0;
 #X obj 142 981 list;
 #X obj 111 1030 unpack 0 0;
-#X obj 1829 684 route 100 101 102;
-#X obj 1873 773 s control_freeze_\$0;
+#X obj 713 1178 route 100 101 102;
+#X obj 757 1267 s control_freeze_\$0;
 #X obj 3 1151 r feedbk_delay_value_\$0;
 #X obj 472 1247 r dry_vol_glob_\$0;
 #X obj 1618 783 s preset_dry_vol_glob_\$0;

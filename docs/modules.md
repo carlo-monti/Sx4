@@ -2,6 +2,20 @@
 
 This are the modules that can be used in Sx4:
 
+### Main Modules
+
+* **main_connection**
+* **main_connection_ext**
+* **main_connection_ext_2**
+* **main_connection_ext_3**
+* **main_connection_ext_4**
+* **main_note_sender**
+* **main_note_receiver**
+* **main_note_router**
+* **main_midi_input**
+
+### Modules
+
 * **melodic_seq**: is a melodic sequence generator. It can generate a random sequence of (max) 32 steps that can be varied througout the performance.
 
 * **chords_seq**: is a chord sequence generator. It can generate a chord sequence of (max) 8 bars, add pattern and traspositions.
@@ -14,7 +28,9 @@ This are the modules that can be used in Sx4:
 
 * **quad_effects**: is a fx chain that includes: chorus, phaser, flanger, delays, granulator (M.I. Clouds) and reverbs.
 
-* **main_note_router**: this is a module used to route notes between modules.
+### Multiple Wrappings
+
+
 
 ### quad_effects
 

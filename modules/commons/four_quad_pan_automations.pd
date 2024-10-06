@@ -1,4 +1,4 @@
-#N canvas 714 183 1390 805 12;
+#N canvas 52 20 1854 1097 12;
 #X obj -169 470 r sync_1_\$0;
 #X obj -193 449 r rst_1_\$0;
 #X obj -119 512 r bpm_1_\$0;
@@ -52,7 +52,7 @@
 #X obj 269 136 hsl 120 20 0 127 0 0 empty empty transition\ time 6 12 1 12 #000000 #ffffff #dfdfdf 0 1;
 #X obj 269 158 hsl 120 20 0 127 0 0 empty empty spatial\ spread 6 12 1 12 #000000 #ffffff #dfdfdf 0 1;
 #X obj 108 107 internal_sync;
-#X obj 311 113 cnv 20 80 20 empty main_shape_label_\$0 eight_(r) 3 12 1 12 #ffffff #000000 0;
+#X obj 311 113 cnv 20 80 20 empty main_shape_label_\$0 circle 3 12 1 12 #ffffff #000000 0;
 #X obj 458 66 s trans_1_\$0;
 #X obj 422 243 s spread_1_\$0;
 #X obj 459 87 s trans_2_\$0;
@@ -463,7 +463,7 @@
 #X obj 904 372 s shape_3_\$0;
 #X obj 903 347 s shape_2_\$0;
 #X obj 215 159 bng 20 250 50 0 empty empty go 3 10 1 12 #fcfcfc #000000 #000000;
-#X obj 215 130 tgl 20 0 empty empty trig 0 -10 1 12 #fcfcfc #000000 #000000 0 1;
+#X obj 215 130 tgl 20 0 empty empty trig 1 10 1 12 #fcfcfc #000000 #000000 0 1;
 #X obj 375 -229 inlet;
 #X obj 454 -231 inlet;
 #X text 371 -250 trig_onoff;
@@ -485,6 +485,7 @@
 #X obj 1228 1183 r out_sync_name_\$0;
 #X obj 1216 1224 outlet;
 #X text 1201 1245 sync_name;
+#X text 209 105 poly;
 #X connect 0 0 159 3;
 #X connect 1 0 159 2;
 #X connect 2 0 159 5;
