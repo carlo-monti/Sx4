@@ -27,7 +27,9 @@ name of presets.
 OSC implementation:
 
 Control
-|-----|-------------------------------------|---|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 100 | Load preset button                  |   |
 | 101 | Save preset button                  |   |
 | 102 | Preset - button                     |   |
@@ -36,7 +38,9 @@ Control
 | 105 | Check connection                    |   |
 
 Feedback
-|-----|-------------------------------------|---|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 200 | Load preset number                  |   |
 | 201 | Save preset as number               |   |
 | 202 | Currently loaded preset number      |   |
@@ -49,13 +53,17 @@ name of song
 OSC implementation:
 
 Preset
-|-----|-------------------------------------|---|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 0   | Main volume                  	|   |
 | 1   | Main bpm              |   |
 | 2   | Merge outputs to stereo            |   |
 
 Control
-|-----|-------------------------------------|---|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 100 | Metronome on/off toggle |   |
 
 
@@ -69,7 +77,9 @@ This is used to route notes to instruments within a particular set. It must be c
 It is used in combination with the **[main_note_sender]** and the **[main_note_receiver]**.
 
 Preset
-|----|-----------------------------------|---|
+
+| n | value |range|
+|-----|--------------------------|---|
 |  0 | -                                 |   |
 |  1 | Source selection for instrument 1 |   |
 |  2 | Source selection for instrument 2 |   |
