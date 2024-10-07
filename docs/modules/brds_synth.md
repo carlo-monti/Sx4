@@ -26,7 +26,9 @@ all the voices are mixed and moves all together througout the space whereas in (
 ###OSC implementation
 
 Presets (ranges are 0-127 except where indicated)
-|-----|----------------------------|----------------|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 0   | timbre                     |                |
 | 1   | colour                     |                |
 | 2   | waveform select            |                |
@@ -82,7 +84,9 @@ Presets (ranges are 0-127 except where indicated)
 | 52  | lfo2 phase                 |                |
 
 Control
-|-----|----------------------------|----------------|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 100 | Waveform +                 |                |
 | 101 | Waveform -                 |                |
 | 102 | automation shape +         |                |
@@ -93,7 +97,9 @@ Control
 | 107 | rngs transposition reset   |                |
 
 Feedback
-|-----|----------------------------|----------------|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 200 | x1                         |                |
 | 201 | y1                         |                |
 | 202 | x2                         |                |
