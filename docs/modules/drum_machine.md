@@ -22,6 +22,11 @@ It allow to select which tracks are affected.
 The samples must be positioned in the `dm_samples` in a folder named sequentially from `0` up.
 The samples inside a folder must be named sequentially from `0` to up (`dm_samples/0/0.wav`, `dm_samples/0/1.wav`, ...).
 The samples should be organized in banks of 16 in an "Ableton" style:
+| Attempt | #1  | #2  |
+| ------- | --- | --- |
+| Seconds | 301 | 283 |
+
+
 
 |-----|------------------------|
 | 0   | kick            |
