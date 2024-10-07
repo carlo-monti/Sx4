@@ -153,6 +153,10 @@ You can find info on how to create new modules [here](./docs/improve.md).
 
 You can find info on how to create a client-server configuration [here](./docs/client_server.md).
 
+## Disclaimer
+
+Sx4 is intended to be a fun experimentation and has nothing to do with auditory realism or scientific rigor: it is simply a framework for bouncing around sounds among four speakers in a creative manner. On the other hand, given that the actual spatialization is done by a bounch of abstractions, it should be simple to implement a more precise method (Ambisonics, …) of handling the sound positioning.
+
 ## References
 Sx4 is heavily based on the following projects:
 * [Mi4Pd](https://github.com/TheTechnobear/Mi4Pd)

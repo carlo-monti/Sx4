@@ -1,9 +1,0 @@
-SONG
-
-Presets and OSC implementation:
-
-0 Main volume
-1 Main bpm
-2 Merge outputs to stereo
-
-100 Metronome on/off toggle

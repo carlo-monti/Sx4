@@ -76,6 +76,10 @@ A wrapping can contain more than one module. In this case a **[main_connection_e
 ### Where to put it
 Once created the module must be positioned in the `modules` folder. This folder must also contains a subfolder (named `module_name_abs`) for the abstractions required. This subfolder should also contain another subfolder called `factory_presets` that should contain at least the `0.txt` file for the initialization (if any).
 
+### Common objects
+
+In the common folder there are a bunch of abstractions that can be used to build objects. Info can be found [./commons_abs.md](here).
+
 ## TouchOSC
 
 Sx4 can be used directly loading and controlling the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.

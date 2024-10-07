@@ -21,9 +21,32 @@ The third output is unused but must be left for compatibility.
 
 It is nothing more than a metronome that can forward the external tempo or follow the internal one. In both cases it will output a message at a rate of 24ppqn (the message contains the period value).
 
+## Routing audio
+
+### four_to_one
+### two_to_one
+### one_to_four
+
 ## Spatialization
 
+### quad_simple_automation
 
+This receives 1 channel of audio and routes it to 4 outputs (FL, FR, RL, RR) in an automated way. You can choose the shape of the path, the time it takes
+to get to the next point of the path and the spread of the path (how far is from the center). You can also choose what is the tempo/sync and the phase (where the path starts).
+
+### four_quad_simple_automation
+
+This handles 4 automations at the same time, receiving 4 channels of audio and routing it to 4 outputs. 
+#### Mono mode
+It can be used in:
+* **mono mode** where the 4 automations does the same and have the same phase (1,2,3 or 4). This is useful to route a 4 channel audio where all the channels
+must be mixed togeter and moved through space. Use case: a monophonic synth with 4 oscillators (each detuned) on each channel that must be moved in the space as a whole.
+* **poly mode** where the 4 automations does the same thing but have different phases. This is useful to route a 4 channel audio where each channel is moved
+individually through the space. Use case: a polyphonic synth where each channel has a voice and each voice is moved in the space individually.
+
+### quad_pan
+
+Takes 4 channel input and routes it to 4 outputs depending on x and y informations.
 
 ## Other
 
