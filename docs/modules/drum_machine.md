@@ -25,7 +25,7 @@ The samples should be organized in banks of 16 in an "Ableton" style:
 
 
 
-| pre | dsfsda|
+| n | value |
 |-----|------------------------|
 | 0   | kick            |
 | 1   | rim            |
@@ -54,6 +54,8 @@ Here is the implementation for the global parameters of the drum machine. To sen
 I.e. to send global sync value, send a message to `dm_osc_name/0/1`.
 
 Presets
+
+| n | value |range|
 |-----|--------------------------|---|
 | 0   | volume global                |   |
 | 1   | global sync            |   |
@@ -70,6 +72,8 @@ Drum machine has 4 independent submodules and below here is the OSC implementati
 I.e. to send chance value to submodule 2 send a message to `dm_osc_name/2/6`.
 
 Presets (ranges are 0-127 except where indicated)
+
+| n | value |range|
 |-----|--------------------------|---|
 | 1   | set kit                  |   |
 | 2   | n of steps               |   |
@@ -135,6 +139,8 @@ Presets (ranges are 0-127 except where indicated)
 | 62  | automation trigger onoff |   |
 
 Control
+
+| n | value |range|
 |-----|--------------------------|---|
 | 100 | write to sequence        |   |
 | 101 | sample +                 |   |
@@ -152,6 +158,8 @@ Control
 | 113 | automation trigger       |   |
 
 Feedback
+
+| n | value |range|
 |-----|--------------------------|---|
 | 200 |                          |   |
 | 201 | play index               |   |
