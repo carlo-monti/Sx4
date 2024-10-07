@@ -1,15 +1,15 @@
-##BRDS_SYNTH
+## brds_synth
 
 This is a subtractive synth based on the MI Braids and the MI Rings modules (Mi4Pd). It has 2 LFOs: the first one is tied to the filter freq, the second one can be assigned.
 
-###Sound generation
+### Sound generation
 
 The synth has 4 output channels whose functioning is defined by three modes:
 -> POLY: 8 voices of polyphony. Each voice will be sent sequentially to the 4 channels: the first to the first ch, the second to the second ch, ..., the fifth to the first ch again
 -> POLY*: 4 voices. Eeach voice is composed by 2 oscillators that can be detuned. Each voice will be sent sequentially to the 4 channels, as above.
 -> MONO: 1 voice. The voice is composed of 4 oscillators that can be detuned. The voice is spread on every channel: each channel receives one oscillator.
 
-###Spatialization
+### Spatialization
 
 Each channel can be assigned to one of the 4 output (FR, FL, RR, RL). This spatialization can be automatized using the spatial automation object.
 
@@ -19,11 +19,11 @@ each voice of a chord (up to 4) moves independently from the other whereas in (s
 When automation is set to one of the other modes (1,2,3,4), all the channels moves in the space as a whole. This means that in (synth) poly mode 
 all the voices are mixed and moves all together througout the space whereas in (synth) mono mode all the detuned oscillators are mixed and moves all together througout the space.
 
-###To do:
+### To do:
 -> LFO 2 assign
 -> Extend poliphony. To do this simply add brds_synt_module objects, add send objects to note sending system and check the onoff.
 
-###OSC implementation
+### OSC implementation
 
 Presets (ranges are 0-127 except where indicated)
 
