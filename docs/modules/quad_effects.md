@@ -1,4 +1,4 @@
-##Quad effects
+## quad_effects
 
 Quad_effects is a quadraphonic effect chain. It is composed of four sections: modulation, delay, granulation and reverb. The sections can be used in sidechain or as parallel sends.
 
@@ -100,7 +100,9 @@ The granulator is based on the MI Clouds (Mi4Pd).
 ### OSC implementation
 
 Presets (ranges are 0-127 except where indicated)
-|-----|------------------------|---|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 0   | chorus rate            |   |
 | 1   | chorus wide            |   |
 | 2   | chorus depth           |   |
@@ -145,13 +147,17 @@ Presets (ranges are 0-127 except where indicated)
 | 41  | phaser choose fl ph tr |   |
 
 Control
-|-----|------------------------|---|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 100 | reset filter           |   |
 | 101 | reset pitch            |   |
 | 102 | grns freeze            |   |
 
 Feedback
-|-----|------------------------|---|
+
+| n | value |range|
+|-----|--------------------------|---|
 | 200 | delay value            |   |
 | 201 | phaser timespread      |   |
 
