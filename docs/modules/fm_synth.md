@@ -24,6 +24,8 @@ all the voices are mixed and moves all together througout the space whereas in (
 ### OSC implementation
 
 Presets (ranges are 0-127 except where indicated)
+
+| n | value |range|
 |-----|--------------------------|---|
 | 0   | op1 ratio                |   |
 | 1   | op1 level                |   |
@@ -95,6 +97,8 @@ Presets (ranges are 0-127 except where indicated)
 | 67  | lfo phase                |   |
 
 Controls
+
+| n | value |range|
 |-----|--------------------------|---|
 | 100 | op1 reset                |   |
 | 101 | op2 reset                |   |
@@ -112,6 +116,8 @@ Controls
 | 113 | 440 go                   |   |
 
 Feedback
+
+| n | value |range|
 |-----|--------------------------|---|
 | 200 |                          |   |
 | 201 | lfo time name            |   |
