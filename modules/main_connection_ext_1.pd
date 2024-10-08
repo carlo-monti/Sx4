@@ -20,14 +20,14 @@
 #X obj 477 64 symbol \$3;
 #X obj 83 477 symbol \$1;
 #X obj 81 599 list trim;
-#X obj 290 -60 r init;
+#X obj 97 -79 r init;
 #X obj -131 226 r to_all;
 #X msg 85 683 pd~ stop;
 #X obj 85 658 r stop_subproc;
 #X obj 81 572 list prepend pd~ start;
 #X obj 122 58 symbol;
 #X obj 121 112 list trim;
-#X obj 115 17 r current_path;
+#X obj 140 5 r current_path;
 #X obj 121 87 list prepend current_path symbol;
 #X msg 189 514 set \$1;
 #X obj 80 544 makefilename;
@@ -40,6 +40,9 @@
 #X obj 236 450 file splitname;
 #X obj 235 475 makefilename %s/modules/%%s;
 #X obj 83 451 r start_subproc;
+#X obj 84 -40 t b b b;
+#X msg 47 67 init 0;
+#X obj 296 616 print;
 #X connect 1 0 2 0;
 #X connect 2 0 17 0;
 #X connect 2 0 18 0;
@@ -59,7 +62,8 @@
 #X connect 18 0 5 0;
 #X connect 19 0 31 0;
 #X connect 20 0 0 0;
-#X connect 21 0 2 0;
+#X connect 20 0 43 0;
+#X connect 21 0 41 0;
 #X connect 22 0 33 0;
 #X connect 23 0 0 0;
 #X connect 24 0 23 0;
@@ -76,4 +80,8 @@
 #X connect 38 0 39 0;
 #X connect 39 0 30 0;
 #X connect 40 0 19 0;
+#X connect 41 0 42 0;
+#X connect 41 1 26 0;
+#X connect 41 2 2 0;
+#X connect 42 0 33 0;
 #X coords 0 715 1 714 135 25 0;
