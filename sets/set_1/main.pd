@@ -75,9 +75,11 @@
 #X text 1393 327 start and init everything;
 #X obj 1249 65 loadbang;
 #X msg 1249 93 \; pd dsp 1;
+#X obj 263 895 print;
 #X connect 0 0 20 0;
 #X connect 0 1 2 0;
 #X connect 1 0 19 0;
+#X connect 1 0 34 0;
 #X connect 1 1 21 0;
 #X connect 1 2 3 0;
 #X connect 10 0 14 0;
