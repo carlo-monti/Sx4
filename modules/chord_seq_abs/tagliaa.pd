@@ -47,11 +47,11 @@
 #X obj 534 675 t b b;
 #X obj 594 675 t b b;
 #X obj 799 855 min 6;
-#X msg 629 710 1;
+#X msg 629 710 2;
 #X obj 490 569 sel 0 1 2 3;
 #X obj 664 677 t b b;
 #X msg 534 710 0;
-#X msg 664 711 2;
+#X msg 664 711 3;
 #X obj 180 186 tgl 13 0 empty empty single -34 7 1 10 #fcfcfc #000000 #000000 0 1;
 #X obj 806 1241 spigot;
 #X obj 805 1267 t f b;
@@ -126,7 +126,7 @@
 #X msg 595 710 1;
 #X msg 701 711 1;
 #X msg 560 710 1;
-#X msg 497 711 3;
+#X msg 497 711 4;
 #X obj 612 559 + 1;
 #X obj 684 564 - 1;
 #X msg 576 601 set \$1;

@@ -2,7 +2,7 @@
 #X declare -path ./commons;
 #X text 340 22 This instrument is used to route incoming note messages from 4 different sources to 8 different instruments.;
 #X obj 130 873 outlet;
-#N canvas 363 527 1390 805 handle_presets 0;
+#N canvas 363 527 1390 805 handle_presets 1;
 #X obj 126 1057 tabwrite presets_\$0;
 #X msg 435 560 \$1 1;
 #X msg 435 537 \$1 0;
@@ -49,10 +49,10 @@
 #X obj 206 975 list;
 #X obj 206 996 unpack 0 0;
 #X obj 470 533 r vol_\$0;
-#X obj 471 557 r bpm_\$0;
+#X obj 515 556 r bpm_\$0;
 #X obj 472 581 r merge_\$0;
 #X obj 817 707 s preset_vol_\$0;
-#X obj 817 731 s preset_bpm_\$0;
+#X obj 855 731 s preset_bpm_\$0;
 #X obj 818 755 s preset_merge_\$0;
 #X obj 813 674 route 0 1 2, f 28;
 #X obj 1024 708 route 100;
@@ -63,6 +63,8 @@
 #X obj 330 451 save_preset presets_\$0 3;
 #X obj 813 609 load_preset presets_\$0;
 #X obj 1027 742 s ctrl_metro_onoff_\$0;
+#X obj 480 557 i;
+#X obj 821 733 i;
 #X connect 1 0 43 0;
 #X connect 2 0 43 0;
 #X connect 3 0 43 0;
@@ -109,10 +111,10 @@
 #X connect 44 0 0 0;
 #X connect 44 1 0 1;
 #X connect 45 0 2 0;
-#X connect 46 0 1 0;
+#X connect 46 0 60 0;
 #X connect 47 0 3 0;
 #X connect 51 0 48 0;
-#X connect 51 1 49 0;
+#X connect 51 1 61 0;
 #X connect 51 2 50 0;
 #X connect 51 3 52 0;
 #X connect 52 0 59 0;
@@ -120,6 +122,8 @@
 #X connect 55 0 57 1;
 #X connect 56 0 57 2;
 #X connect 58 0 51 0;
+#X connect 60 0 1 0;
+#X connect 61 0 49 0;
 #X restore 453 -91 pd handle_presets;
 #X text 96 900 internal_out;
 #X obj -135 -124 inlet;

@@ -352,7 +352,7 @@
 #X text 606 153 +2;
 #X text 606 211 -1;
 #X text 606 230 -2;
-#X obj 340 154 vsl 20 100 0 1 0 0 empty empty mix 0 -9 1 12 #000000 #ffffff #7c7c7c 0 1;
+#X obj 340 154 vsl 20 100 0 1 0 0 empty empty frq 0 -9 1 12 #000000 #ffffff #7c7c7c 0 1;
 #X obj 365 -154 loadbang;
 #X msg 336 -155 0;
 #X obj 337 -174 s fold_mix_\$0;

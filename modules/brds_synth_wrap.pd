@@ -1,4 +1,4 @@
-#N canvas 523 120 1397 869 12;
+#N canvas 587 108 1397 869 12;
 #X obj 8 681 dac~ 1 2 3 4;
 #X obj 47 314 brds_synth;
 #X obj 1211 73 loadbang;
