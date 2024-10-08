@@ -166,3 +166,4 @@ Sx4 is heavily based on the following projects:
 * [Fx-Chain patch](http://www.pdpatchrepo.info/hurleur/FX_Chain.zip)
 * [DIY2](http://www.pdpatchrepo.info/hurleur/DIY2.zip)
 * [CrossPomeha](https://patchstorage.com/crosspomeha-pd-version/)
+* [alexdrymonitis](https://github.com/alexdrymonitis/filter_abstractions)

@@ -168,7 +168,6 @@
 #X msg -312 535 12;
 #X msg -276 543 -12;
 #X msg -265 524 -24;
-#X obj 508 665 print;
 #X connect 0 0 146 0;
 #X connect 0 1 146 0;
 #X connect 1 0 20 0;
@@ -179,7 +178,6 @@
 #X connect 6 0 21 0;
 #X connect 7 0 21 0;
 #X connect 8 0 46 0;
-#X connect 8 0 169 0;
 #X connect 9 0 46 0;
 #X connect 10 0 20 0;
 #X connect 11 0 21 0;

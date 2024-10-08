@@ -28,7 +28,7 @@
 #X obj 252 299 s q_\$0;
 #X obj 477 -34 r freq_\$0;
 #X obj 555 -49 r q_\$0;
-#X obj 495 121 r freq_\$0;
+#X obj 476 106 r freq_\$0;
 #X obj 450 245 r freq_\$0;
 #X obj 483 266 r q_\$0;
 #X obj 481 433 r freq_\$0;
@@ -42,7 +42,7 @@
 #X obj 179 -6 inlet;
 #X obj 27 41 s~ sig_in_\$0;
 #X obj 392 -35 r~ sig_in_\$0;
-#X obj 394 130 r~ sig_in_\$0;
+#X obj 387 120 r~ sig_in_\$0;
 #X obj 396 280 r~ sig_in_\$0;
 #X obj 400 460 r~ sig_in_\$0;
 #X obj 393 634 r~ sig_in_\$0;
@@ -89,6 +89,7 @@
 #X obj 568 454 r~ env_\$0;
 #X obj 575 280 r~ env_\$0;
 #X obj 636 116 r~ env_\$0;
+#X obj 500 125 r q_\$0;
 #X connect 0 0 51 0;
 #X connect 1 0 51 0;
 #X connect 2 0 51 0;
@@ -102,10 +103,10 @@
 #X connect 7 0 1 5;
 #X connect 7 0 4 5;
 #X connect 7 0 3 5;
-#X connect 7 0 0 4;
 #X connect 7 0 5 5;
+#X connect 7 0 0 5;
 #X connect 8 0 1 5;
-#X connect 9 0 0 4;
+#X connect 9 0 0 5;
 #X connect 10 0 5 5;
 #X connect 11 0 3 5;
 #X connect 12 0 2 5;
@@ -162,12 +163,13 @@
 #X connect 77 0 5 3;
 #X connect 78 0 4 3;
 #X connect 79 0 1 3;
-#X connect 80 0 0 2;
+#X connect 80 0 0 3;
 #X connect 81 0 83 0;
 #X connect 84 0 1 4;
 #X connect 85 0 4 4;
 #X connect 86 0 2 4;
 #X connect 87 0 3 4;
 #X connect 88 0 5 4;
-#X connect 89 0 0 3;
+#X connect 89 0 0 4;
+#X connect 90 0 0 2;
 #X coords 0 -1 1 1 100 110 2 100 100;
