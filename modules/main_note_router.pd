@@ -1,10 +1,10 @@
 #N canvas 530 107 1390 977 12;
 #X declare -path ./commons;
-#X obj 150 124 vradio 20 1 0 5 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
-#X obj 176 124 vradio 20 1 0 5 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
+#X obj 150 124 vradio 20 1 0 7 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
+#X obj 176 124 vradio 20 1 0 7 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
 #X obj 20 -138 s routing_\$0;
-#X obj 202 124 vradio 20 1 0 5 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
-#X obj 228 124 vradio 20 1 0 5 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
+#X obj 202 124 vradio 20 1 0 7 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
+#X obj 228 124 vradio 20 1 0 7 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
 #X obj -259 433 route 0;
 #X obj -130 434 route 0;
 #X obj 7 432 route 0;
@@ -14,10 +14,10 @@
 #X obj 441 435 route 0;
 #X obj 582 441 route 0;
 #X obj 716 440 route 0;
-#X obj 254 124 vradio 20 1 0 5 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
-#X obj 280 124 vradio 20 1 0 5 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
-#X obj 306 124 vradio 20 1 0 5 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
-#X obj 332 124 vradio 20 1 0 5 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
+#X obj 254 124 vradio 20 1 0 7 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
+#X obj 280 124 vradio 20 1 0 7 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
+#X obj 306 124 vradio 20 1 0 7 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
+#X obj 332 124 vradio 20 1 0 7 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
 #X text 104 145 src 1;
 #X text 154 103 1;
 #X text 180 103 2;
@@ -52,7 +52,7 @@
 #X obj 352 11 r preset_sel_7_\$0;
 #X obj 394 35 r preset_sel_8_\$0;
 #X obj 130 873 outlet;
-#N canvas 324 138 1390 970 handle_presets 1;
+#N canvas 324 138 1390 970 handle_presets 0;
 #X obj 126 1057 tabwrite presets_\$0;
 #X msg 435 560 \$1 1;
 #X msg 435 537 \$1 0;
@@ -247,6 +247,8 @@
 #X obj 308 -255 s load_init_\$0;
 #X text 130 848 dummy;
 #X obj 607 -220 declare -path ./commons;
+#X text 104 224 src 5;
+#X text 104 244 src 6;
 #X connect 0 0 5 1;
 #X connect 0 0 84 0;
 #X connect 0 0 94 0;
@@ -348,4 +350,4 @@
 #X connect 102 5 70 0;
 #X connect 102 6 68 0;
 #X connect 102 7 103 0;
-#X coords 0 -1 1 1 260 130 2 100 100;
+#X coords 0 -1 1 1 260 170 2 100 100;

@@ -5,7 +5,7 @@
 #X obj 695 402 s osc_out;
 #X obj 850 854 s osc_out;
 #X obj 26 1015 s osc_out;
-#X obj 748 181 s osc_out;
+#X obj 750 221 s osc_out;
 #X obj 150 173 s to_all;
 #X obj 217 173 s osc_out;
 #X obj 356 181 s to_all;
@@ -13,7 +13,7 @@
 #X obj 356 19 main_connection 101 song;
 #X obj 26 986 pd~ -ninsig 0 -noutsig 4;
 #X obj 150 19 main_connection 100 presets;
-#X obj 556 46 main_note_router;
+#X obj 556 45 main_note_router;
 #X obj 358 45 main_song_handler;
 #X obj 150 46 main_presets_handler;
 #X obj 103 1015 main_output, f 13;
@@ -23,7 +23,6 @@
 #X obj 31 405 main_note_sender 1;
 #X obj 471 855 main_note_sender 4;
 #X obj 556 19 main_connection 102 router;
-#X obj 27 956 main_connection_ext_1 brds_synth_wrap.pd 3 brds, f 70;
 #N canvas 66 32 1854 977 init 0;
 #X obj 105 336 s stop_subproc;
 #X obj 108 234 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
@@ -81,6 +80,7 @@
 #X text 1393 327 start and init everything;
 #X obj 1249 65 loadbang;
 #X msg 1249 93 \; pd dsp 1;
+#X obj 27 956 main_connection_ext_1 drum_machine_wrap.pd 3 dm, f 70;
 #X connect 0 0 20 0;
 #X connect 0 1 2 0;
 #X connect 1 0 19 0;
@@ -98,12 +98,12 @@
 #X connect 14 1 9 0;
 #X connect 15 0 6 0;
 #X connect 15 1 7 0;
-#X connect 18 0 23 0;
+#X connect 18 0 33 0;
 #X connect 22 0 13 0;
-#X connect 23 0 11 0;
-#X connect 25 0 0 0;
-#X connect 26 0 29 0;
-#X connect 26 1 27 0;
-#X connect 28 0 26 0;
-#X connect 30 0 1 0;
-#X connect 32 0 33 0;
+#X connect 24 0 0 0;
+#X connect 25 0 28 0;
+#X connect 25 1 26 0;
+#X connect 27 0 25 0;
+#X connect 29 0 1 0;
+#X connect 31 0 32 0;
+#X connect 33 0 11 0;

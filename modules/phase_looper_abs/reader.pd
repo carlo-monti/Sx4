@@ -1,4 +1,4 @@
-#N canvas 296 312 1534 805 12;
+#N canvas 256 143 1534 805 12;
 #X declare -path ../../commons;
 #X obj 124 -192 inlet;
 #X obj 82 -191 inlet;
@@ -109,8 +109,8 @@
 #X obj 155 262 == 0;
 #X obj 98 306 t b f;
 #X obj 197 311 t b f;
-#X msg 305 470 10;
-#X msg 255 467 10;
+#X msg 305 470 0;
+#X msg 255 467 0;
 #X obj 731 87 inlet;
 #X obj 756 155 t b f;
 #X msg 773 206 set \$1;
@@ -186,7 +186,7 @@
 #X f 20;
 #X obj 1143 693 s reset_phase\$0;
 #X obj 531 632 r reset_phase\$0;
-#N canvas 854 213 1390 805 retrigger_envelope 0;
+#N canvas 396 234 1390 805 retrigger_envelope 0;
 #X obj 180 438 pow~ 2;
 #X obj 493 190 i;
 #X obj 360 190 i;
@@ -582,7 +582,7 @@
 #X obj 519 1099 r flt_frq_\$0;
 #X obj 542 1122 r flt_q_\$0;
 #X obj 1484 1510 s~ lfo2_fm_\$0;
-#X obj 1155 1510 s~ lfo1_fm_\$0;
+#X obj 1159 1555 s~ lfo1_fm_\$0;
 #X obj 568 1147 r~ lfo1_fm_\$0;
 #X obj 548 1709 r~ lfo2_fm_\$0;
 #X obj 1682 -208 inlet;
@@ -789,6 +789,10 @@
 #X text 259 -233 mix;
 #X obj 288 -44 s fold_mix_\$0;
 #X obj 478 959 r fold_mix_\$0;
+#X obj 1050 530 pipe 2;
+#X obj 1808 -201 inlet~;
+#X obj 234 951 r~ direct_in_\$0;
+#X obj 1808 -175 s~ direct_in_\$0;
 #X connect 0 0 40 0;
 #X connect 1 0 52 0;
 #X connect 5 0 61 1;
@@ -810,7 +814,7 @@
 #X connect 25 0 27 0;
 #X connect 26 0 18 0;
 #X connect 26 0 100 0;
-#X connect 26 0 61 0;
+#X connect 26 0 369 0;
 #X connect 27 0 18 0;
 #X connect 27 0 100 0;
 #X connect 27 0 61 0;
@@ -902,7 +906,7 @@
 #X connect 169 0 134 5;
 #X connect 170 0 169 0;
 #X connect 171 0 170 0;
-#X connect 172 0 162 0;
+#X connect 172 1 162 0;
 #X connect 173 0 201 0;
 #X connect 174 0 202 0;
 #X connect 175 0 203 0;
@@ -911,7 +915,7 @@
 #X connect 186 0 198 0;
 #X connect 187 0 199 0;
 #X connect 191 0 200 0;
-#X connect 205 0 161 0;
+#X connect 205 1 161 0;
 #X connect 206 0 172 1;
 #X connect 207 0 172 2;
 #X connect 208 0 172 3;
@@ -1076,4 +1080,7 @@
 #X connect 352 0 334 0;
 #X connect 364 0 367 0;
 #X connect 368 0 135 3;
+#X connect 369 0 61 0;
+#X connect 370 0 372 0;
+#X connect 371 0 135 0;
 #X coords 0 805 1 804 670 254 0;
