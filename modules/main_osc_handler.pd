@@ -1,4 +1,4 @@
-#N canvas 52 20 1854 1097 12;
+#N canvas 52 20 1854 977 12;
 #X msg 753 389 disconnect;
 #X obj 463 531 netsend -u -b;
 #X text 795 331 Send;
@@ -26,8 +26,7 @@
 #X msg 580 824 set settings 108;
 #X obj 539 675 del 200;
 #X msg 450 732 symbol connected;
-#X obj 669 201 loadbang;
-#X msg 669 226 0;
+#X obj 121 33 loadbang;
 #X obj 463 191 r osc_out;
 #X obj 155 848 s osc_in;
 #X obj 117 135 tgl 20 0 empty empty localhost 0 -10 1 12 #fcfcfc #000000 #000000 0 1;
@@ -35,8 +34,9 @@
 #X text 385 165 already formatted osc messages;
 #X text 101 101 osc connect;
 #X obj 715 492 print;
+#X msg 122 57 1;
 #X connect 0 0 1 0;
-#X connect 1 0 35 0;
+#X connect 1 0 34 0;
 #X connect 3 0 8 0;
 #X connect 3 1 0 0;
 #X connect 4 0 7 0;
@@ -51,7 +51,7 @@
 #X connect 11 0 13 0;
 #X connect 12 0 9 0;
 #X connect 13 0 14 0;
-#X connect 14 0 30 0;
+#X connect 14 0 29 0;
 #X connect 15 0 10 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
@@ -66,8 +66,8 @@
 #X connect 24 0 19 0;
 #X connect 25 0 20 0;
 #X connect 26 0 19 0;
-#X connect 27 0 28 0;
-#X connect 28 0 4 0;
-#X connect 29 0 1 0;
-#X connect 31 0 4 0;
+#X connect 27 0 35 0;
+#X connect 28 0 1 0;
+#X connect 30 0 4 0;
+#X connect 35 0 30 0;
 #X coords 0 -1 1 1 85 60 2 100 100;
