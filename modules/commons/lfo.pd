@@ -1,4 +1,4 @@
-#N canvas 340 283 1390 805 10;
+#N canvas 391 248 1390 805 10;
 #X obj 101 695 line~;
 #X obj 104 670 pack 0 50;
 #N canvas 0 22 1534 977 sinewave 0;
@@ -422,7 +422,7 @@
 #X obj 924 436 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 950 436 loadbang;
 #X msg 814 457 \; division_label_\$2 label \$1;
-#X obj 148 164 cnv 5 5 5 empty division_label_\$0 6.5x 0 0 0 10 #fcfcfc #404040 0;
+#X obj 148 164 cnv 5 5 5 empty division_label_\$0 1.57_Hz 0 0 0 10 #fcfcfc #404040 0;
 #X obj 139 149 cnv 5 5 5 empty mul_label_\$0 1x 0 0 0 10 #fcfcfc #404040 0;
 #X obj 1088 751 f \$0;
 #X obj 1018 751 pack s 0;
@@ -555,7 +555,7 @@
 #X obj 850 404 spigot;
 #X obj 865 340 r sync_\$0;
 #X obj 794 378 symbol;
-#X obj 843 377 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
+#X obj 811 331 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj -41 645 f \$0;
 #X obj -2 646 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 24 646 loadbang;
