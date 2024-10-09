@@ -1,4 +1,4 @@
-#N canvas 358 58 1390 805 10;
+#N canvas 347 66 1390 805 10;
 #X obj -746 657 rngs~;
 #X msg -300 660 pitch \$1;
 #X msg 152 667 structure \$1;
@@ -294,4 +294,4 @@
 #X connect 166 0 24 0;
 #X connect 167 0 24 0;
 #X connect 168 0 24 0;
-#X coords 0 -1 1 1 235 110 1 100 100;
+#X coords 0 -1 1 1 235 110 2 100 100;

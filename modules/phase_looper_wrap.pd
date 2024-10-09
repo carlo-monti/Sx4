@@ -6,7 +6,7 @@
 #X obj 1285 438 loadbang;
 #X msg 1285 461 \; pd dsp 1;
 #X obj 775 139 r sub1;
-#X obj 52 182 readsf~;
+#X obj 58 179 readsf~;
 #X msg 0 144 start;
 #X msg 64 150 0;
 #X msg 54 123 open ../satie.wav;

@@ -1,4 +1,4 @@
-#N canvas 52 20 1854 977 10;
+#N canvas 52 20 1854 1097 10;
 #X declare -path ../commons;
 #X obj 225 165 hsl 60 10 0 1 0 0 \$0-c \$0-rc feedback -2 -7 1 10 #000000 #fcfcfc #001488 0 1;
 #X obj 224 137 hsl 60 10 0 127 0 0 \$0-b \$0-rb depth -2 -7 1 10 #000000 #ffffff #001488 0 1;
@@ -1305,7 +1305,7 @@
 #X obj 668 267 s~ lfo1_01_\$0;
 #X obj 824 266 s~ lfo2_01_\$0;
 #X obj 967 279 s~ lfo3_01_\$0;
-#X obj 1065 280 s~ lfo4_01_\$0;
+#X obj 1125 278 s~ lfo4_01_\$0;
 #X obj 23 -24 del 100;
 #X obj 9 -57 loadbang;
 #X connect 0 0 3 0;

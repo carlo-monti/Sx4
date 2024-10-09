@@ -1,64 +1,30 @@
-Quad_effects is a quadraphonic effect chain. It is composed of four sections: modulation, delay, granulation and reverb. The sections can be used in sidechain or as parallel sends.
+# phase_looper
+phase_looper is a looper inspired from the SOMA cosmos. It will record a slice of audio and repeat the playback with 4 different length (creating a phasing effect).
 
-MODULATION SECTION  *******************************
-This section has a chorus and a modulator
+## how the code works
+The sound is recorded into a table and there are 4 readers that will read it with different length.
 
-CHORUS
+### Mode 1
+In mode 1 the table is played in its full length from start to end (or in reverse) at a different speed depending on the octave.
 
-MODULATOR
-Select effect:
-0-> off
-1-> phaser
-2-> flanger
-3-> tremolo
+Inside pd main_values:
 
-Phase: define the phases of the 4 lfos.
-0-> all have the same phase
-1-> phases are even (0, 1/4, 1/2, 3/4)
-2-> phases are odd
+When the reader receives the loop length (global) it will scale it according to its ID (0 to 3: 100, 90%, 80%, 70% of the original loop length) and according to the octave selected (longer or shorter). This will set the internal envelope length and the phasor frequency (to match the octave). It means that the phasor will read the table at a certain speed to match the octave and the sound will be scaled in amplitude by the envelope. After the envelope has finished, it will reset again the phasor phase and the playing will restart from the beginning.
 
-Time: define the time (when in absolute mode) or the subdivision of the master clock (when in synced mode)
+Inside pd build_envelope:
+The envelope length will generate the attack decay and sustain length (in ms). The envelope will calculate the attack/decay values giving the shape of a saw, of an inverted saw or a mountain. When envelope is at 64 (center), the envelope has a fixed attack and decay (4 ms): it is played exactly as a looper will do (only fading out the edges).
 
-Sync: define if the time Is free or synced with the master with a certain subdivision
+Inside pd retrigger_envelope:
+When a play (1) message is received, the attack sustain and decay values are collected, a reset message is sent to the phasor and the envelope starts. It is retrigged after a while (a time proportional to the wait value).
 
-Spread: define how the time is different between the 4 lfos
-0-> all have the same time subdivision
-1-> they are separated by 1 subdivision (if synced)
-2-> they are separated by 2 subdivision (if synced)
-...
-If they are not synced, the time are continuously spaced by a certain amount (to do: set periodicity also in this case: half, quarter...)
+### Mode 2 (overlapping)
 
-Feedback:
+In mode 2 the table is divided in two equal parts, each having a simmetric envelope (attack=decay). The attack/decay time is where the overlapping of the two happens: one table is played and when the decay starts, the second table attack starts (fade out / fade in). The length of the attack/decay is the amount of overlapping.
 
-Delay:
+In this mode the wait doesn't work.
 
-Dry/Wet:
+Inside pd build_envelope:
+The table length is divided in half, giving the envelope length. The attack/decay value is calculated in percentage of the 1/4 of the full table length. When env shape is max, the attack/decay is exactly half of the envelope length (1/4 of the full table).
 
-DELAY SECTION *******************************
 
-This is a quadraphonic delay (4 independent delays) that can be used in many ways.
 
-Time: define the time (when in absolute mode) or the subdivision of the master clock (when in synced mode)
-
-Sync: define if the time Is free or synced with the master with a certain subdivision
-
-Spread: define how the time is different between the 4 delays.
-0-> all have the same time subdivision
-1-> they are separated by 1 subdivision (if synced)
-2-> they are separated by 2 subdivision (if synced)
-...
-If they are not synced, the time are continuously spaced by a certain amount (to do: set periodicity also in this case: half, quarter...)
-
-Feedback: amount of feedback into the delays
-
-Filter: filter of the feedback. It is hi_pass when above half and low_pass when below half. It can be reset to center with the button.
-
-Chain: define where the feedback of a delay is sent. I.e. "the output of the first delay goes to the feedback of the second".
-0-> All delay feeds itself
-1-> Infinite: 1->2->3->4
-2-> Eight:
-3-> Circle:
-
-Diffusion: define if the output of a delay should follow strictly the chain or can be "diffused" also to other destination. I.e. if diffusion is set to high, the output of the first delay goes to the input of delay 2 but also a little to the input of 3 and 4 (depending on the selected chain).
-
-Mono: all the inputs goes to the first delay (TO DO!)
