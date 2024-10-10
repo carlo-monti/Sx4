@@ -1,9 +1,9 @@
-#N canvas 336 91 1390 805 12;
+#N canvas 316 248 1390 805 12;
 #X declare -path ../../modules;
 #X obj 30 256 melodic_seq;
 #X obj 29 701 chord_seq;
 #X obj 695 402 s osc_out;
-#X obj 850 854 s osc_out;
+#X obj 851 883 s osc_out;
 #X obj 26 1015 s osc_out;
 #X obj 750 221 s osc_out;
 #X obj 150 173 s to_all;
@@ -80,7 +80,7 @@
 #X text 1393 327 start and init everything;
 #X obj 1249 65 loadbang;
 #X msg 1249 93 \; pd dsp 1;
-#X obj 24 959 main_connection_ext_1 phase_looper_wrap.pd 3 looper, f 70;
+#X obj 25 959 main_connection_ext_1 phase_looper_wrap.pd 3 looper, f 70;
 #X connect 0 0 20 0;
 #X connect 0 1 2 0;
 #X connect 1 0 19 0;

@@ -660,7 +660,7 @@
 #X obj -273 -391 s control_\$0;
 #X obj -286 -424 route name;
 #X obj -329 -526 s osc_name_\$0;
-#X obj 608 2247 r control_out_\$0;
+#X obj 613 2211 r control_out_\$0;
 #X obj 586 2424 outlet;
 #X obj 586 2398 oscformat;
 #X obj 589 2320 list split 1;
@@ -1249,6 +1249,9 @@
 #X msg 785 1962 0.5;
 #X obj -144 653 route 1;
 #X obj -211 677 print;
+#X obj 760 2142 env~ 16384 8192;
+#X obj 760 2183 - 100;
+#X msg 760 2214 \$1 300;
 #X connect 0 0 2 1;
 #X connect 0 0 1 1;
 #X connect 0 0 27 0;
@@ -1278,6 +1281,7 @@
 #X connect 37 0 38 0;
 #X connect 38 0 265 0;
 #X connect 39 0 189 0;
+#X connect 39 0 781 0;
 #X connect 40 0 60 0;
 #X connect 41 0 11 0;
 #X connect 42 0 62 0;
@@ -1347,6 +1351,7 @@
 #X connect 119 6 122 0;
 #X connect 119 7 123 0;
 #X connect 124 0 192 0;
+#X connect 124 0 781 0;
 #X connect 125 0 779 0;
 #X connect 125 0 780 0;
 #X connect 128 0 118 0;
@@ -1372,7 +1377,9 @@
 #X connect 150 0 140 0;
 #X connect 150 0 149 0;
 #X connect 152 0 190 0;
+#X connect 152 0 781 0;
 #X connect 153 0 191 0;
+#X connect 153 0 781 0;
 #X connect 154 0 152 0;
 #X connect 155 0 153 0;
 #X connect 156 0 124 0;
@@ -1994,4 +2001,7 @@
 #X connect 779 0 151 0;
 #X connect 779 0 714 0;
 #X connect 779 0 713 0;
+#X connect 781 0 782 0;
+#X connect 782 0 783 0;
+#X connect 783 0 663 0;
 #X coords 0 -1 1 1 1120 170 2 100 100;

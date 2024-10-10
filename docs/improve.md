@@ -80,7 +80,11 @@ Once created the module must be positioned in the `modules` folder. This folder 
 
 In the common folder there are a bunch of abstractions that can be used to build objects. Info can be found [./commons_abs.md](here).
 
-## TouchOSC
+## OSC control
+
+The OSC implementation should follow some structure:
+
+### TouchOSC
 
 Sx4 can be used directly loading and controlling the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
 

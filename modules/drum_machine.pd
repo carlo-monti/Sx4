@@ -175,7 +175,7 @@
 #X text 1449 1233 osc_out;
 #X obj -354 -700 declare -path ./commons;
 #X obj -355 -723 declare -path ./drum_machine_abs;
-#N canvas 1968 141 1854 739 handle_presets 1;
+#N canvas 1968 141 1854 739 handle_presets 0;
 #X obj 145 925 tabwrite presets_\$0;
 #X msg 453 311 \$1 1;
 #X msg 453 288 \$1 0;
@@ -446,6 +446,7 @@
 #X msg -531 -550 save_init \$1;
 #X msg -531 -608 0;
 #X obj -725 -523 route 1 2 3 4 0;
+#X obj -810 -513 print;
 #X connect 0 0 34 0;
 #X connect 0 1 35 0;
 #X connect 0 2 36 0;
@@ -597,6 +598,7 @@
 #X connect 155 0 176 0;
 #X connect 155 0 238 0;
 #X connect 160 0 243 0;
+#X connect 160 0 244 0;
 #X connect 162 0 160 1;
 #X connect 164 0 163 0;
 #X connect 165 0 164 0;
