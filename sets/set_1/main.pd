@@ -70,7 +70,7 @@
 #X connect 25 0 21 0;
 #X connect 27 0 14 0;
 #X coords 0 -1 1 1 110 160 1 100 100;
-#X restore 21 22 pd init;
+#X restore 22 21 pd init;
 #X obj 32 227 main_connection 0 seq1;
 #X obj 26 472 melodic_seq;
 #X obj 691 618 s osc_out;
@@ -80,7 +80,7 @@
 #X text 1393 327 start and init everything;
 #X obj 1249 65 loadbang;
 #X msg 1249 93 \; pd dsp 1;
-#X obj 27 956 main_connection_ext_1 drum_machine_wrap.pd 3 dm, f 70;
+#X obj 24 959 main_connection_ext_1 phase_looper_wrap.pd 3 looper, f 70;
 #X connect 0 0 20 0;
 #X connect 0 1 2 0;
 #X connect 1 0 19 0;
