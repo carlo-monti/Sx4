@@ -83,7 +83,24 @@ In the common folder there are a bunch of abstractions that can be used to build
 ## OSC control
 
 The OSC implementation should follow some structure:
+0-99
 
+100-199
+
+200-299
+
+300-399
+300 Vumeter_glob
+301 Vumeter FL
+302 Vumeter FR
+303 Vumeter RL
+304 Vumeter RR
+
+400-499
+400 x 1
+401 y 1
+402 x 2
+403 y 2
 ### TouchOSC
 
 Sx4 can be used directly loading and controlling the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
@@ -96,7 +113,9 @@ It has many pages, each corresponding to a module (more or less). To be easily m
 * Fix dry wet flanger
 * Add detune function for synths for using in combo. It will be dependent on ID: if even positive, if odd negative.
 * Fix lfo assign in modules
+* Fix clicks when retriggering recording in phase_looper: maybe add a second table that alternates the reading when the other is recording 
 * Fix flanger click (substitute guts with mine)
+* Add a pitch estimate for the live sound to the resonator
 * Fix phases in square wave on LFO (there isn't any phase!)
 * Fix noises when changing wave on phaser/flanger
 * Add fade-in function for the melodic_seq

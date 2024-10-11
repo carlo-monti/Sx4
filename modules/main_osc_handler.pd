@@ -22,12 +22,10 @@
 #X text 207 863 parsed received osc messages;
 #X text 385 165 already formatted osc messages;
 #X text 101 101 osc connect;
-#X obj 463 559 print;
 #X msg 122 57 1;
 #X obj 155 836 outlet;
 #X obj 305 44 inlet;
 #X connect 0 0 1 0;
-#X connect 1 0 23 0;
 #X connect 3 0 8 0;
 #X connect 3 1 0 0;
 #X connect 4 0 7 0;
@@ -43,11 +41,11 @@
 #X connect 12 0 9 0;
 #X connect 13 0 14 0;
 #X connect 14 0 18 0;
-#X connect 14 0 25 0;
+#X connect 14 0 24 0;
 #X connect 15 0 10 0;
-#X connect 16 0 24 0;
+#X connect 16 0 23 0;
 #X connect 17 0 1 0;
 #X connect 19 0 4 0;
-#X connect 24 0 19 0;
-#X connect 26 0 1 0;
+#X connect 23 0 19 0;
+#X connect 25 0 1 0;
 #X coords 0 -1 1 1 85 60 2 100 100;

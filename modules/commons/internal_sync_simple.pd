@@ -16,7 +16,7 @@
 #X text 105 106 off;
 #X text 105 136 int;
 #X text 105 121 ext;
-#X obj 190 217 metronome;
+#X obj 161 224 metronome;
 #X obj -46 495 outlet;
 #X obj 43 494 outlet;
 #X obj 114 492 outlet;
@@ -39,6 +39,8 @@
 #X obj 44 338 spigot;
 #X obj 109 336 spigot;
 #X msg 87 240 1;
+#X obj 284 490 outlet;
+#X text 280 522 is_on;
 #X connect 0 0 23 0;
 #X connect 1 0 22 0;
 #X connect 3 0 13 0;
@@ -73,6 +75,7 @@
 #X connect 29 0 22 1;
 #X connect 34 0 36 0;
 #X connect 36 0 17 0;
+#X connect 36 0 40 0;
 #X connect 37 0 18 0;
 #X connect 38 0 19 0;
 #X connect 39 0 37 1;
