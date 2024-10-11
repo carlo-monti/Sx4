@@ -3,7 +3,7 @@
 
 Here are the instruction to build a headless server that runs Sx4 controlled by a client that runs TouchOSC. It has been tested on Debian 12.
 
-### On the server
+### Client
 * Install Debian without any DE.
 * Install sudo: `apt install sudo`
 * Add username to sudoers `sudo usermod -aG sudo [username]`
@@ -41,3 +41,34 @@ Here are the instruction to build a headless server that runs Sx4 controlled by 
      ```
 
 * Launch the patch `pd -nogui -jack -send ";auto_start 1" -outchannels 4 path/to/main.pd`
+
+### Client
+This are the info on how to use a Raspberry PI 4 with a touchscreen.
+
+* Install Raspbian OS
+* Install TouchOSC sudo dpkg -i touc...
+* 
+* Deactivate all the things that we will not use
+  * sudo systemctl disable bluetooth
+  * sudo systemctl disable cups
+  * sudo systemctl disable cups-browsed
+  * sudo systemctl disable cron
+  * sudo systemctl disable ssh
+
+* Create a script that connects to the network and launches a TouchOSC file:
+  * Stop wifi: sudo rfkill block wifi
+  * Start touchosc:
+  /opt/touchosc/TouchOSC control.tosc
+  
+* Make the script autorun on startup
+Open a terminal, and execute the following commands to create an autostart directory (if one does not already exist) and edit a .desktop file for our clock example:
+
+mkdir /home/pi/.config/autostart
+nano /home/pi/.config/autostart/clock.desktop
+
+Copy in the following text into the clock.desktop file. Feel free to change the Name and Exec variables to your particular application.
+
+[Desktop Entry]
+Type=Application
+Name=Clock
+Exec=/usr/bin/python3 /home/pi/clock.py
