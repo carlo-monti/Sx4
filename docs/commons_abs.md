@@ -60,3 +60,13 @@ The lfo has three outputs:
 The factor set the depth range: it can be full (1/1), half (1/2) or a tenth (1/10). 
 
 The lfo can be synced to the main tempo with a selected subdivision.
+
+## Sounds
+
+### wavefold
+
+This is a module that does wavemangling. It has different modes: a new mode can be added!
+
+### fx_chain
+
+This is a Kaoss pad effect. If it is created with a -1 argument **[fx_chain -1]** it does not do audio computation. This is useful to use the module as master to control many instances.

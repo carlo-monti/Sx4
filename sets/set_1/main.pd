@@ -101,7 +101,7 @@
 #X msg 1226 601 \$1 405;
 #X msg 1255 573 \$1 406;
 #X msg 1283 602 \$1 407;
-#X obj 25 959 main_connection_ext_1 fm_synth_wrap.pd 3 fm, f 70;
+#X obj 25 959 main_connection_ext_1 drum_machine_wrap.pd 3 dm, f 70;
 #X connect 0 0 20 0;
 #X connect 0 1 2 0;
 #X connect 1 0 19 0;

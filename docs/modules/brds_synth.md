@@ -19,6 +19,21 @@ each voice of a chord (up to 4) moves independently from the other whereas in (s
 When automation is set to one of the other modes (1,2,3,4), all the channels moves in the space as a whole. This means that in (synth) poly mode 
 all the voices are mixed and moves all together througout the space whereas in (synth) mono mode all the detuned oscillators are mixed and moves all together througout the space.
 
+### Improve
+To add poliphony:
+* add two (!) brds\_full\_module~
+* For poly mode 0:
+    * Augment poly value (es. poly 10 1)
+    * Add route number
+    * Add the s\_to\_synth sender
+    * Do +1 to detune sender (*40 becomes connected to 1,2,3,4,5 and *-1 connected to 6,7,8,9,10)
+* For poly mode 1: 
+    * Augment poly value (es. poly 10 1)
+    * Add route
+    * Add the two sender to the same route outlet
+* For mono mode don't do anything
+
+
 ### To do:
 -> LFO 2 assign
 -> Extend poliphony. To do this simply add brds_synt_module objects, add send objects to note sending system and check the onoff.

@@ -1,4 +1,4 @@
-#N canvas 764 139 1390 805 12;
+#N canvas 530 139 1390 805 12;
 #X obj 3 -293 drum_machine;
 #X obj -169 -281 r sub1;
 #X obj 1228 497 stdout;

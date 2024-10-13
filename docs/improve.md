@@ -82,25 +82,32 @@ In the common folder there are a bunch of abstractions that can be used to build
 
 ## OSC control
 
-The OSC implementation should follow some structure:
-0-99
+The OSC implementation is done using numbers. Each parameter that can be controlled is assigned to a number. This assignment should follow a structure:
 
-100-199
+### Presets (0-99)
+Parameters that should be saved as preset and that requires send and feedback. I.e. Filter Frequency
 
-200-299
+### Control (100-199)
+Parameters or commands that only needs send/control. I.e. A trigger button
 
-300-399
+### Feedback (200-up)
+This are informations that are only sent out from the patch to display some useful info on the controller. I.e. name of the waveform ("saw","pulse",...). There are some standard assignments:
+
 300 Vumeter_glob
 301 Vumeter FL
 302 Vumeter FR
 303 Vumeter RL
 304 Vumeter RR
 
-400-499
 400 x 1
 401 y 1
 402 x 2
 403 y 2
+404 x 3
+405 y 3
+406 x 4
+406 y 4
+
 ### TouchOSC
 
 Sx4 can be used directly loading and controlling the PureData patch. It is also possible to use it in a client/server setting loading the patch without the GUI and using a OSC controller such as TouchOSC. In the main folder there is a `control.tosc` file that does this.
@@ -126,7 +133,7 @@ It has many pages, each corresponding to a module (more or less). To be easily m
 * Fix hipass filter
 * Fix all the randomization in drum_machine as a multiplication
 * Add swing to drum_machine
-* Check kaoss fx drum machine
+* Add new combos to fx_chain
 
 
 
