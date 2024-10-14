@@ -1,4 +1,4 @@
-#N canvas 66 32 1854 1097 10;
+#N canvas 66 32 1854 977 10;
 #X obj 587 383 bob~;
 #X obj 591 173 pack 0 10;
 #X obj 657 400 bob~;
@@ -31,7 +31,7 @@
 #X obj 648 146 + 50;
 #X obj 651 63 / 127;
 #X obj 652 87 0_to_1_log 50;
-#X obj 648 124 * 13949;
+#X obj 651 123 * 13949;
 #X connect 0 0 2 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;

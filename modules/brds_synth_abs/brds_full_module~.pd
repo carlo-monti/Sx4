@@ -16,7 +16,7 @@
 #X obj 96 534 / 127;
 #X obj 154 534 / 127;
 #X obj 662 -166 declare -path ../commons;
-#X obj 335 375 adsr;
+#X obj 296 359 adsr;
 #X floatatom -75 612 5 0 127 0 - - - 0;
 #X obj -167 531 i;
 #X obj -86 531 i;
@@ -139,6 +139,10 @@
 #X obj -106 353 +;
 #X obj -164 315 r detune_\$0;
 #X text 1499 -69 detune;
+#X msg 478 318 5000 100 3000 100 5000 100;
+#X obj 464 286 loadbang;
+#X msg 917 174 5000 100 3000 100 5000 100;
+#X obj 903 142 loadbang;
 #X connect 0 0 64 0;
 #X connect 0 1 59 0;
 #X connect 1 0 0 0;
@@ -236,4 +240,8 @@
 #X connect 134 0 135 0;
 #X connect 136 0 1 0;
 #X connect 137 0 136 1;
+#X connect 139 0 16 7;
+#X connect 140 0 139 0;
+#X connect 141 0 84 7;
+#X connect 142 0 141 0;
 #X coords 0 977 1 976 685 260 0;

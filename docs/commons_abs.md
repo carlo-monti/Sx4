@@ -70,3 +70,84 @@ This is a module that does wavemangling. It has different modes: a new mode can 
 ### fx_chain
 
 This is a Kaoss pad effect. If it is created with a -1 argument **[fx_chain -1]** it does not do audio computation. This is useful to use the module as master to control many instances.
+
+## What uses what table
+
+This shows what common abstraction is used by what module:
+
+fm\_synth uses:
+compressor
+lfo
+four\_quad\_pan\_automations
+quad\_pan
+adsr
+vumeter
+load_preset
+save\\_preset
+load\_init
+save\_init
+
+brds\_synth uses:
+filter_selection
+rngs
+wavefold
+compressor
+lfo
+four\_quad\_pan\_automations
+quad\_pan
+adsr
+vumeter
+load\_preset
+save\_preset
+load\_init
+save\_init
+
+quad\_effects uses:
+dry\_wet\_quad
+four\_to\_one\_select
+internal\_sync
+lo\_hi_filter
+load_preset
+save\\_preset
+load\_init
+save\_init
+lfo
+
+drum_machine uses
+gauss_rnd
+internal_sync
+euclid
+uziurn
+filter_selection
+wavefold
+lfo
+quad_pan_automation
+fx_chain
+rngs
+quad_pan
+
+
+filter_selection depencencies:
+hp-filter
+lp-filter
+analog-filter
+bob-filter
+ladder-filter
+bp-filter
+
+fx_chain dependencies:
+fx_babyscratch~
+fx_tremolo~
+fx_beat_repeat~
+fx_loop~
+compressor
+
+lfo dependencies:
+0_to_1_log
+internal_sync
+
+quad_pan_automation:
+internal_sync
+
+
+

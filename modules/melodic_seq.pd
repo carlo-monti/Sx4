@@ -231,8 +231,8 @@
 #X connect 103 0 105 0;
 #X coords 0 -1 1 1 75 115 1 100 100;
 #X restore 472 123 pd Toglie;
-#N canvas 66 32 1534 1097 Aggiunge 0;
-#X obj 100 100 cnv 15 75 115 empty empty add 5 8 1 8 #ffffff #404040 0;
+#N canvas 66 32 1534 977 Aggiunge 0;
+#X obj 101 101 cnv 15 75 115 empty empty add 5 8 1 8 #ffffff #404040 0;
 #X obj 156 104 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 86 -3 inlet bang;
 #X floatatom -7 284 5 0 150 0 - - OffsetAggiunge_\$0 0;
@@ -1280,7 +1280,7 @@
 #X obj 236 107 bng 20 250 50 0 empty empty r 8 11 1 12 #000000 #7c7c7c #ffffff;
 #X obj 211 -539 s rotate_left_\$0;
 #X obj 234 -522 s rotate_right_\$0;
-#N canvas 324 138 1390 970 handle_presets 0;
+#N canvas 324 138 1390 970 handle_presets 1;
 #X obj 1205 -11 f \$0;
 #X obj 1271 -41 loadbang;
 #X obj 1121 -11 pack 0 0 0;

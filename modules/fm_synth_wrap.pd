@@ -1,10 +1,10 @@
 #N canvas 603 138 1390 788 12;
 #X obj 57 168 fm_synth;
-#X obj 1343 50 loadbang;
-#X msg 1343 73 \; pd dsp 1;
-#X obj 15 13 r sub1;
-#X obj 945 471 stdout;
-#X obj 424 461 dac~ 1 2 3 4;
+#X obj 203 16 loadbang;
+#X msg 203 39 \; pd dsp 1;
+#X obj 58 16 r sub1;
+#X obj 1050 457 stdout;
+#X obj 58 470 dac~ 1 2 3 4;
 #X connect 0 0 5 0;
 #X connect 0 1 5 1;
 #X connect 0 2 5 2;
