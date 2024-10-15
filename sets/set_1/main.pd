@@ -1,4 +1,4 @@
-#N canvas 211 86 1390 805 12;
+#N canvas 52 20 1854 1097 12;
 #X declare -path ../../modules;
 #X declare -path ../../modules/commons;
 #X obj 30 256 melodic_seq;
