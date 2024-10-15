@@ -1,4 +1,4 @@
-#N canvas 262 97 1390 805 12;
+#N canvas 211 86 1390 805 12;
 #X declare -path ../../modules;
 #X declare -path ../../modules/commons;
 #X obj 30 256 melodic_seq;
@@ -24,8 +24,8 @@
 #X obj 31 405 main_note_sender 1;
 #X obj 471 855 main_note_sender 4;
 #X obj 556 19 main_connection 102 router;
-#N canvas 66 32 1854 977 init 0;
-#X obj 105 336 s stop_subproc;
+#N canvas 482 172 1390 715 init 0;
+#X obj 108 336 s stop_subproc;
 #X obj 108 234 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 272 185 s current_path;
 #X msg 272 158 symbol \$1;
@@ -37,7 +37,7 @@
 #X obj 19 185 delay 2000;
 #X obj 108 208 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X text 427 187 start and init everything;
-#X obj 13 12 r auto_start;
+#X obj 13 -22 r auto_start;
 #X obj 20 155 delay 100;
 #X obj 107 128 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 107 181 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
@@ -52,14 +52,18 @@
 #X obj 166 21 loadbang;
 #X msg 166 46 0;
 #X obj 232 50 s with_gui;
-#X obj 15 40 delay 4000;
+#X obj 13 74 delay 4000;
+#X obj 13 42 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X msg 37 13 auto_start;
+#X obj 42 42 print;
 #X connect 1 0 0 0;
 #X connect 3 0 2 0;
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
 #X connect 9 0 10 0;
 #X connect 10 0 8 0;
-#X connect 12 0 27 0;
+#X connect 12 0 28 0;
+#X connect 12 0 29 0;
 #X connect 13 0 15 0;
 #X connect 13 0 9 0;
 #X connect 14 0 13 0;
@@ -70,6 +74,8 @@
 #X connect 24 0 25 0;
 #X connect 25 0 21 0;
 #X connect 27 0 14 0;
+#X connect 28 0 27 0;
+#X connect 29 0 30 0;
 #X coords 0 -1 1 1 110 160 1 100 100;
 #X restore 22 21 pd init;
 #X obj 32 227 main_connection 0 seq1;
@@ -101,7 +107,7 @@
 #X msg 1226 601 \$1 405;
 #X msg 1255 573 \$1 406;
 #X msg 1283 602 \$1 407;
-#X obj 30 960 main_connection_ext_2 brds_synth_effects_wrap.pd 3 brds 4 brdsfx, f 70;
+#X obj 33 958 main_connection_ext_1 drum_machine_wrap.pd 3 dm, f 70;
 #X connect 0 0 20 0;
 #X connect 0 1 2 0;
 #X connect 1 0 19 0;
