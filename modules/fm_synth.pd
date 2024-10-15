@@ -1,6 +1,5 @@
 #N canvas 372 109 1390 708 10;
 #X declare -path ./fm_synth_abs;
-#X declare -path ./commons;
 #X obj 80 24 dx7_interface 1;
 #X obj 181 23 dx7_interface 2;
 #X obj 279 24 dx7_interface 3;
@@ -1398,7 +1397,6 @@
 #X obj 785 -479 r preset_comp_gain_\$0;
 #X msg 987 -21 1;
 #X obj -24 -441 declare -path ./fm_synth_abs;
-#X obj -24 -418 declare -path ./commons;
 #X obj -585 -427 route bang_bpm rst instance_id load save osc_name osc notes init current_path, f 86;
 #X connect 0 0 15 0;
 #X connect 1 0 16 0;
@@ -1592,7 +1590,7 @@
 #X connect 190 1 191 0;
 #X connect 191 1 193 0;
 #X connect 193 0 192 0;
-#X connect 196 0 404 0;
+#X connect 196 0 403 0;
 #X connect 202 0 201 0;
 #X connect 204 0 202 1;
 #X connect 207 0 210 0;
@@ -1792,14 +1790,14 @@
 #X connect 398 0 388 0;
 #X connect 400 0 388 0;
 #X connect 401 0 67 0;
-#X connect 404 0 194 0;
-#X connect 404 1 195 0;
-#X connect 404 2 199 0;
-#X connect 404 3 198 0;
-#X connect 404 4 197 0;
-#X connect 404 5 203 0;
-#X connect 404 6 202 0;
-#X connect 404 7 205 0;
-#X connect 404 8 219 0;
-#X connect 404 9 231 0;
+#X connect 403 0 194 0;
+#X connect 403 1 195 0;
+#X connect 403 2 199 0;
+#X connect 403 3 198 0;
+#X connect 403 4 197 0;
+#X connect 403 5 203 0;
+#X connect 403 6 202 0;
+#X connect 403 7 205 0;
+#X connect 403 8 219 0;
+#X connect 403 9 231 0;
 #X coords 0 -1 1 1 1000 190 2 20 20;
