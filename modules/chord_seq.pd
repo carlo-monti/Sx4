@@ -14,7 +14,7 @@
 #X obj -166 1575 outlet;
 #X obj 3 2 internal_sync;
 #X obj -214 258 s bang_\$0;
-#X obj -188 239 s rst_\$0;
+#X obj -149 244 s rst_\$0;
 #X obj 327 442 r rst_\$0;
 #X obj 300 420 r bang_\$0;
 #X obj 300 442 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
@@ -1402,6 +1402,7 @@
 #X connect 9 0 94 0;
 #X connect 11 0 12 0;
 #X connect 11 1 13 0;
+#X connect 11 1 233 0;
 #X connect 11 3 206 0;
 #X connect 11 3 233 0;
 #X connect 11 4 207 0;
