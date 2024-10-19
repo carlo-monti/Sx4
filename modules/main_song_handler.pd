@@ -129,7 +129,7 @@
 #X obj 86 -33 s save_\$0;
 #X obj 15 -34 s load_\$0;
 #X obj -65 -41 s ID_\$0;
-#X obj 210 -34 s control_\$0;
+#X obj 290 -40 s control_\$0;
 #X obj 307 534 r control_out_\$0;
 #X obj 252 697 oscformat;
 #X obj 253 619 list split 1;
@@ -172,11 +172,11 @@
 #X obj 750 326 catch~ main_out_4;
 #X obj 23 722 s to_all;
 #X obj 252 723 s osc_out;
-#X obj 207 -88 r osc_in;
+#X obj 287 -94 r osc_in;
 #X obj -65 -95 loadbang;
 #X msg -65 -70 101;
 #X obj 12 -94 r to_all;
-#X obj 210 -61 route song;
+#X obj 290 -67 route song;
 #X obj 285 643 list prepend set song;
 #X obj 13 -63 route load save vumeter;
 #X obj 146 -1 s vumeter_\$0;
