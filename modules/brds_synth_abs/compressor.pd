@@ -38,7 +38,7 @@
 #X obj 15 607 outlet~ leftOutput;
 #X text 78 445 ms attack/release;
 #X obj 144 27 loadbang;
-#X msg 31 444 \$1 40;
+#X msg 32 445 \$1 40;
 #X obj 16 14 inlet~ input;
 #X obj 31 372 t a;
 #X obj 374 603 outlet;

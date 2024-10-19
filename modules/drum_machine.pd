@@ -170,7 +170,7 @@
 #X obj 1573 1128 list prepend set;
 #X text 1449 1233 osc_out;
 #X obj -355 -723 declare -path ./drum_machine_abs;
-#N canvas -207 229 1854 739 handle_presets 0;
+#N canvas -207 229 1854 739 handle_presets 1;
 #X obj 145 925 tabwrite presets_\$0;
 #X msg 453 311 \$1 1;
 #X msg 453 288 \$1 0;
@@ -278,6 +278,7 @@
 #X obj 124 1031 print;
 #X obj 36 1053 list append 0 209;
 #X obj 36 1076 list trim;
+#X msg 1332 126 0;
 #X connect 1 0 38 0;
 #X connect 2 0 38 0;
 #X connect 3 0 38 0;
@@ -381,6 +382,7 @@
 #X connect 103 0 67 0;
 #X connect 105 0 106 0;
 #X connect 106 0 67 0;
+#X connect 107 0 96 0;
 #X restore -354 -676 pd handle_presets;
 #X obj -686 -635 s current_path_\$0;
 #X obj -1004 -718 s to_all_submodules_\$0;

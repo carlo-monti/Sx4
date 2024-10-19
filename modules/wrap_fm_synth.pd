@@ -5,6 +5,7 @@
 #X obj 58 16 r sub1;
 #X obj 1050 457 stdout;
 #X obj 58 470 dac~ 1 2 3 4;
+#X msg 121 97 init 0;
 #X connect 0 0 5 0;
 #X connect 0 1 5 1;
 #X connect 0 2 5 2;
@@ -12,4 +13,5 @@
 #X connect 0 4 4 0;
 #X connect 1 0 2 0;
 #X connect 3 0 0 0;
+#X connect 6 0 0 0;
 #X coords 0 788 1 787 1150 200 0;

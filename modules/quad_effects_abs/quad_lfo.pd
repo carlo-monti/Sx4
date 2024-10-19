@@ -1,4 +1,4 @@
-#N canvas 52 20 1854 1097 10;
+#N canvas 52 20 1854 977 10;
 #X declare -path ../commons;
 #X obj 399 100 s \$0-depth;
 #X msg 770 698 0;
@@ -136,7 +136,7 @@
 #X text 188 -168 sync;
 #X msg 54 16 1;
 #X msg 23 17 64;
-#X obj 180 102 cnv 18 10 10 empty time_show_\$0 1.75_Hz 2 12 0 10 #ffffff #404040 0;
+#X obj 180 102 cnv 18 10 10 empty time_show_\$0 1.33_Hz 2 12 0 10 #ffffff #404040 0;
 #X obj -257 58 f \$0;
 #X obj -327 58 pack s 0;
 #X obj -218 59 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
@@ -348,4 +348,4 @@
 #X connect 186 0 50 3;
 #X connect 188 0 189 0;
 #X connect 191 0 187 0;
-#X coords 0 -1 1 1 232 132 2 100 100;
+#X coords 0 -1 1 1 152 132 2 100 100;

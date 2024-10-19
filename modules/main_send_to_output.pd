@@ -1,0 +1,13 @@
+#N canvas 875 415 450 300 12;
+#X obj 65 43 inlet~;
+#X obj 115 42 inlet~;
+#X obj 167 43 inlet~;
+#X obj 217 42 inlet~;
+#X obj 66 88 throw~ main_out_1;
+#X obj 93 115 throw~ main_out_2;
+#X obj 140 142 throw~ main_out_3;
+#X obj 187 168 throw~ main_out_4;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;

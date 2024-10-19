@@ -91,3 +91,5 @@ This are the info on how to use a Raspberry PI 4 with a touchscreen. The Rpi wil
 ## How to use
 
 Once all the connections have been made, you should first start the client and then start the patch with the argument  `-send ";auto_start 1"`. This will make the patch start all the subprocesses and send `init 0` message to all of them. Wait 4 seconds and the set is ready to use.
+
+###

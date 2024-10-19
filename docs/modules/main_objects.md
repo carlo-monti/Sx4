@@ -94,3 +94,16 @@ Preset
 ### main_midi_input
 
 This is used to get midi note input. It should be connected to a **[note_sender]** object.
+
+### main_output
+
+This sends utput to the soundcard allowing main vulume control and stereo merge (4ch->2ch). This also sends out the vumeter.
+
+Feedback
+
+| n | value |range|
+|-----|--------------------------|---|
+| song/301 | Vumeter ch 1 (FL) |   |
+| song/302 | Vumeter ch 2 (FR) |   |
+| song/303 | Vumeter ch 3 (RL) |   |
+| song/304 | Vumeter ch 4 (RR) |   |

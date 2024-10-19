@@ -1,6 +1,6 @@
 #N canvas 151 119 1141 718 12;
-#X obj 684 188 loadbang;
-#X floatatom 601 394 5 0 27 0 - - - 0;
+#X obj 729 182 loadbang;
+#X floatatom 600 418 5 0 27 0 - - - 0;
 #X obj 702 362 i;
 #X obj 561 364 i;
 #X obj 672 363 + 1;
@@ -14,12 +14,11 @@
 #X floatatom 630 467 5 0 0 0 - - - 0;
 #X obj 505 365 max \$2;
 #X obj 622 363 min \$3;
-#X text 806 85 arguments \; 1- Init value \; 2- min value 3- max value;
-#X obj 700 81 inlet;
-#X obj 700 106 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
-#X text 520 43 value+;
-#X text 621 48 value-;
-#X text 698 50 get_current_value;
+#X text 880 82 arguments \; 1- Init value \; 2- min value 3- max value;
+#X text 520 43 +;
+#X text 621 48 -;
+#X obj 700 80 inlet;
+#X text 691 55 reset;
 #X connect 0 0 8 0;
 #X connect 1 0 2 1;
 #X connect 1 0 3 1;
@@ -36,5 +35,4 @@
 #X connect 10 0 7 0;
 #X connect 13 0 1 0;
 #X connect 14 0 1 0;
-#X connect 16 0 17 0;
-#X connect 17 0 1 0;
+#X connect 18 0 8 0;

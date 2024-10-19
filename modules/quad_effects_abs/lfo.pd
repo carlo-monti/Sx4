@@ -1,4 +1,4 @@
-#N canvas 391 248 1390 805 10;
+#N canvas 52 20 1854 977 10;
 #X obj 101 695 line~;
 #X obj 104 670 pack 0 50;
 #N canvas 0 22 1534 977 sinewave 0;
@@ -422,7 +422,7 @@
 #X obj 924 436 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 950 436 loadbang;
 #X msg 814 457 \; division_label_\$2 label \$1;
-#X obj 148 164 cnv 5 5 5 empty division_label_\$0 1.57_Hz 0 0 0 10 #fcfcfc #404040 0;
+#X obj 148 164 cnv 5 5 5 empty division_label_\$0 1/4t 0 0 0 10 #fcfcfc #404040 0;
 #X obj 139 149 cnv 5 5 5 empty mul_label_\$0 1x 0 0 0 10 #fcfcfc #404040 0;
 #X obj 1088 751 f \$0;
 #X obj 1018 751 pack s 0;
@@ -588,6 +588,10 @@
 #X obj 620 377 t f b;
 #X obj 770 226 / 127;
 #X obj 770 249 * 27;
+#X obj 1121 942 outlet;
+#X text 1108 966 bang_every_cycle;
+#X obj 1128 908 r bang_every_cycle_\$0;
+#X obj 648 529 s bang_every_cycle_\$0;
 #X connect 0 0 3 0;
 #X connect 0 0 4 0;
 #X connect 0 0 34 0;
@@ -699,6 +703,7 @@
 #X connect 110 0 32 0;
 #X connect 111 0 108 0;
 #X connect 112 0 110 0;
+#X connect 112 0 173 0;
 #X connect 117 0 124 0;
 #X connect 119 0 69 0;
 #X connect 120 0 20 0;
@@ -738,4 +743,5 @@
 #X connect 167 1 112 0;
 #X connect 168 0 169 0;
 #X connect 169 0 60 4;
+#X connect 172 0 170 0;
 #X coords 0 -1 1 1 120 75 2 100 100;
