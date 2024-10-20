@@ -283,7 +283,7 @@
 #X text 373 2277 osc_out;
 #X obj -334 -558 r osc_name_\$0;
 #X obj 635 -703 declare -path ./phase_looper_abs;
-#N canvas 52 20 1854 977 handle_presets 0;
+#N canvas 52 20 1854 977 handle_presets 1;
 #X obj 563 1739 tabwrite presets_\$0;
 #X msg 683 397 \$1 1;
 #X msg 683 373 \$1 0;
@@ -303,7 +303,7 @@
 #X obj 717 421 r env_glob_\$0;
 #X obj 717 397 r oct_glob_\$0;
 #X obj 717 373 r rev_glob_\$0;
-#X obj 717 757 r vol_glob_\$0;
+#X obj 721 1324 r vol_glob_\$0;
 #X obj 927 757 s preset_rev_glob_\$0;
 #X obj 940 730 s preset_oct_glob_\$0;
 #X obj 969 699 s preset_env_glob_\$0;
@@ -347,7 +347,7 @@
 #X obj 717 925 r lfo2_ass_glob_\$0;
 #X obj 1109 750 s preset_flt_sel_glob_\$0;
 #X obj 1130 727 s preset_q_glob_\$0;
-#X obj 1191 666 s preset_vol_glob_\$0;
+#X obj 1906 573 s preset_vol_glob_\$0;
 #X obj 1217 645 s preset_lfo1_frq_glob_\$0;
 #X obj 1243 622 s preset_lfo1_dep_glob_\$0;
 #X obj 1265 601 s preset_lfo1_wave_glob_\$0;
@@ -412,7 +412,7 @@
 #X msg 680 1276 \$1 38;
 #X msg 680 1300 \$1 39;
 #X msg 680 1321 \$1 40;
-#X obj 723 1323 r fold_mix_\$0;
+#X obj 714 761 r fold_mix_\$0;
 #X obj 1025 627 s preset_poly_rngs_\$0;
 #X obj 1038 605 s preset_exciter_rngs_\$0;
 #X obj 1048 585 s preset_pitch_rngs_\$0;
@@ -423,7 +423,7 @@
 #X obj 1837 635 s preset_model_rngs_\$0;
 #X obj 1858 614 s preset_damp_rngs_\$0;
 #X obj 1873 594 s preset_bright_rngs_\$0;
-#X obj 1900 573 s preset_fold_mix_\$0;
+#X obj 1195 661 s preset_fold_mix_\$0;
 #X obj 1038 173 f;
 #X obj 540 142 r save_\$0;
 #X obj 1031 122 r load_\$0;
@@ -499,7 +499,7 @@
 #X obj 736 1682 r del_mix_\$0;
 #X obj 2348 544 s preset_del_mix_\$0;
 #X obj 791 100 table presets_\$0 60;
-#X obj 1174 684 s preset_del_fbk_\$0;
+#X obj 1180 680 s preset_del_fbk_\$0;
 #X obj 2147 243 s ctrl_file_stop_\$0;
 #X obj 2128 219 s ctrl_file_play_\$0;
 #X obj 2084 170 s ctrl_file_+_\$0;
@@ -513,7 +513,7 @@
 #X obj 533 226 save_preset presets_\$0 58;
 #X msg 705 1732 \$1 58;
 #X obj 747 1735 r input_select_\$0;
-#X obj 916 440 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58, f 236;
+#X obj 911 433 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58, f 236;
 #X obj 2376 496 s preset_input_select_\$0;
 #X msg 33 495 \$1 210;
 #X msg 95 496 \$1 211;
@@ -546,7 +546,7 @@
 #X connect 16 0 3 0;
 #X connect 17 0 1 0;
 #X connect 18 0 2 0;
-#X connect 19 0 26 0;
+#X connect 19 0 127 0;
 #X connect 24 0 73 0;
 #X connect 25 0 73 0;
 #X connect 26 0 73 0;
@@ -623,7 +623,7 @@
 #X connect 125 0 73 0;
 #X connect 126 0 73 0;
 #X connect 127 0 73 0;
-#X connect 128 0 127 0;
+#X connect 128 0 26 0;
 #X connect 140 0 147 0;
 #X connect 141 0 226 0;
 #X connect 142 0 140 0;
@@ -710,7 +710,7 @@
 #X connect 229 13 62 0;
 #X connect 229 14 209 0;
 #X connect 229 15 215 0;
-#X connect 229 16 63 0;
+#X connect 229 16 139 0;
 #X connect 229 17 64 0;
 #X connect 229 18 65 0;
 #X connect 229 19 66 0;
@@ -734,7 +734,7 @@
 #X connect 229 37 136 0;
 #X connect 229 38 137 0;
 #X connect 229 39 138 0;
-#X connect 229 40 139 0;
+#X connect 229 40 63 0;
 #X connect 229 41 162 0;
 #X connect 229 42 163 0;
 #X connect 229 43 164 0;

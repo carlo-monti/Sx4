@@ -218,7 +218,7 @@
 #N canvas 362 107 1150 805 edit_seq 0;
 #X obj 100 100 cnv 20 836 30 empty background_canvas empty 20 12 0 12 #e0e0e0 #404040 0;
 #X obj 101 101 cnv 20 834 28 empty active_steps_\$0 empty 20 12 0 12 #7c7c7c #404040 0;
-#X obj 233 102 cnv 20 26 26 empty pointer_\$0 empty 20 12 0 12 #fc2828 #404040 0;
+#X obj 909 102 cnv 20 26 26 empty pointer_\$0 empty 20 12 0 12 #fc2828 #404040 0;
 #X obj 106 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 132 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
 #X obj 158 105 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #fcfcfc #000000 0 1;
@@ -1235,7 +1235,7 @@
 #X obj 1704 154 r preset_trig_onoff_\$0;
 #X obj 1233 353 s set_preset_trig_onoff_\$0;
 #X msg 961 914 60;
-#N canvas 52 20 1854 977 handle_presets 0;
+#N canvas 52 20 1854 977 handle_presets 1;
 #X obj 1074 -40 t b b f;
 #X obj 752 127 until;
 #X obj 751 160 i;
@@ -2060,7 +2060,7 @@
 #X obj 1809 877 gauss_rnd 40 10 2;
 #X obj -377 -357 route instance_id module_id load save current_path bang_bpm rst init save_init vumeter, f 87;
 #X obj 202 -272 s vumeter_\$0;
-#N canvas 52 20 1854 1097 vumeter_\$0 1;
+#N canvas 52 20 1854 1097 vumeter_\$0 0;
 #X obj 720 418 env~;
 #X obj 720 443 - 100;
 #X obj 601 281 inlet~;

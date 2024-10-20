@@ -1,4 +1,4 @@
-#N canvas 341 85 1327 889 12;
+#N canvas 773 204 1327 889 12;
 #X declare -path ../../modules;
 #X obj 30 256 melodic_seq;
 #X obj 29 701 chord_seq;
@@ -109,6 +109,7 @@
 #X connect 26 0 25 0;
 #X coords 0 -1 1 1 185 160 1 100 100;
 #X restore -265 265 pd init;
+#X obj -312 1092 main_note_receiver 1;
 #X connect 0 0 11 0;
 #X connect 0 1 2 0;
 #X connect 1 0 10 0;
@@ -163,3 +164,4 @@
 #X connect 46 0 24 0;
 #X connect 48 0 6 0;
 #X connect 49 1 5 0;
+#X connect 52 0 43 0;
