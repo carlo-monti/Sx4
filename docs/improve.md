@@ -89,6 +89,7 @@ Parameters that should be saved as preset and that requires send and feedback. I
 
 ### Control (100-199)
 Parameters or commands that only needs send/control. I.e. A trigger button
+The volume control must be set to number 40.
 
 ### Feedback (200-up)
 This are informations that are only sent out from the patch to display some useful info on the controller. I.e. name of the waveform ("saw","pulse",...). There are some standard assignments:
