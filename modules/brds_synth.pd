@@ -663,7 +663,7 @@
 #X text 639 2585 osc_out;
 #X obj -174 -463 r osc_name_\$0;
 #X obj -145 -498 s current_path_\$0;
-#N canvas 295 147 1390 713 handle_presets 1;
+#N canvas 295 147 1390 713 handle_presets 0;
 #X obj 240 1913 tabwrite presets_\$0;
 #X msg 435 560 \$1 1;
 #X msg 435 537 \$1 0;
@@ -1290,6 +1290,8 @@
 #X obj 384 2444 r vumeter_\$0;
 #X obj -544 -561 route bang_bpm rst instance_id load save osc_name osc current_path notes init vumeter, f 99;
 #X obj 144 -519 s vumeter_\$0;
+#X obj 97 -638 loadbang;
+#X msg 97 -614 1;
 #X connect 0 0 2 1;
 #X connect 0 0 1 1;
 #X connect 0 0 27 0;
@@ -2087,4 +2089,6 @@
 #X connect 828 8 207 0;
 #X connect 828 9 694 0;
 #X connect 828 10 829 0;
+#X connect 830 0 831 0;
+#X connect 831 0 829 0;
 #X coords 0 -1 1 1 1120 170 2 100 100;

@@ -630,7 +630,7 @@
 #X msg 1853 1186 0;
 #X obj 422 1157 s env_\$0;
 #X obj 2225 843 r env_\$0;
-#X obj 1879 721 r glob_vol_\$0;
+#X obj 1874 643 r glob_vol_\$0;
 #X obj 1133 1598 r volume_randomized_\$0;
 #X obj 1784 953 s volume_randomized_\$0;
 #X msg 1123 1630 \$1 2;
@@ -821,7 +821,7 @@
 #X obj 465 831 r preset_pitch_\$0;
 #X obj 487 941 r preset_random_pitch_amt_\$0;
 #X obj 463 733 r preset_micro_wide_pitch_\$0;
-#X obj 1883 750 / 127;
+#X obj 1878 672 / 127;
 #X obj 1954 782 / 127;
 #X obj 1461 425 r preset_mute_\$0;
 #X obj 1505 446 loadbang;
@@ -1235,7 +1235,7 @@
 #X obj 1704 154 r preset_trig_onoff_\$0;
 #X obj 1233 353 s set_preset_trig_onoff_\$0;
 #X msg 961 914 60;
-#N canvas 52 20 1854 977 handle_presets 1;
+#N canvas 52 20 1854 977 handle_presets 0;
 #X obj 1074 -40 t b b f;
 #X obj 752 127 until;
 #X obj 751 160 i;
@@ -2074,6 +2074,7 @@
 #X restore 899 1864 pd vumeter_\$0;
 #X obj 894 1903 s fbk_vumeter_\$0;
 #X obj 914 1827 r vumeter_\$0;
+#X obj 1881 719 pow 2;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
@@ -2249,7 +2250,7 @@
 #X connect 166 0 79 0;
 #X connect 167 0 80 0;
 #X connect 168 0 128 0;
-#X connect 169 0 127 0;
+#X connect 169 0 528 0;
 #X connect 170 0 126 0;
 #X connect 171 0 94 0;
 #X connect 172 0 173 0;
@@ -2563,4 +2564,5 @@
 #X connect 523 10 473 0;
 #X connect 525 0 526 0;
 #X connect 527 0 525 1;
+#X connect 528 0 127 0;
 #X coords 0 -1 1 1 1400 160 2 100 100;

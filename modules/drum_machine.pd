@@ -460,6 +460,8 @@
 #X obj -255 -13 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj -847 -468 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj -976 -716 route bang_bpm rst;
+#X obj -477 -716 loadbang;
+#X msg -477 -692 1;
 #X connect 0 0 224 0;
 #X connect 0 1 228 0;
 #X connect 0 2 232 0;
@@ -742,4 +744,6 @@
 #X connect 244 0 202 0;
 #X connect 245 0 78 0;
 #X connect 248 2 140 0;
+#X connect 249 0 250 0;
+#X connect 250 0 214 0;
 #X coords 0 -1 1 1 1420 745 1 0 0;

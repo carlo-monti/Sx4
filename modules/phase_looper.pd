@@ -283,7 +283,7 @@
 #X text 373 2277 osc_out;
 #X obj -334 -558 r osc_name_\$0;
 #X obj 635 -703 declare -path ./phase_looper_abs;
-#N canvas 52 20 1854 977 handle_presets 1;
+#N canvas 52 20 1854 977 handle_presets 0;
 #X obj 563 1739 tabwrite presets_\$0;
 #X msg 683 397 \$1 1;
 #X msg 683 373 \$1 0;
@@ -1167,6 +1167,8 @@
 #X restore 27 -359 pd input_vu;
 #X obj 85 -397 r vumeter_\$0;
 #X msg 1147 -209 1;
+#X obj -154 -728 loadbang;
+#X msg -154 -704 1;
 #X connect 0 0 286 0;
 #X connect 1 0 65 0;
 #X connect 1 0 184 0;
@@ -1797,4 +1799,6 @@
 #X connect 670 0 635 0;
 #X connect 671 0 670 1;
 #X connect 672 0 50 0;
+#X connect 673 0 674 0;
+#X connect 674 0 647 0;
 #X coords 0 -1 1 1 940 270 2 100 100;
