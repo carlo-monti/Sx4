@@ -3,7 +3,7 @@
 
 ## What is it
 
-Sx4 is a musical making system designed to exploit the power of a quadraphonic speaker setting. It is a kind of a framework: it is componed of many modules that can save presets globally and that can also be controlled via OSC. The modules are fully built instruments. You can think of it this way: Sx4 can be used to build a fixed instrument set (i.e. two subtractive synths, one fm synth, two sequencers, etc.) and use it to make songs that can be saved and recalled. Sx4 is something like a "live oriented" DAW: it allows you to build a dynamic structure of instruments whose initial settings are globally saved and that are intended to be "tweaked" during live performances.
+Sx4 is a musical making system designed to exploit the power of a quadraphonic speaker setting. It is a kind of a framework: it is componed of many modules that can save presets globally and that can also be controlled via OSC. Rather than a modular system (like AUTOMATONISM), it is intended as a traditional music making setup: the modules are be fully built instruments. You can think of it this way: Sx4 can be used to create a fixed instrument set (i.e. two subtractive synths, one fm synth, two sequencers, etc.) and use it to make songs that can be saved and recalled. Sx4 is something like a "live oriented" DAW: it allows you to build a dynamic structure of instruments whose initial settings are globally saved and that are intended to be "tweaked" during live performances.
 
 ## Getting started
 
@@ -15,10 +15,10 @@ This section illustrate how to start making music with Sx4. Let's create a simpl
    * Do the same for creating a `brds_synth` module: create the object and assign to it ID 1.
    * Create a **[note_sender 1]** object and connect it to the first outlet of the `melody_seq` module. This will allow the module to be selected as source (from the note router) as source 1.
    * Create a **[note_receiver 1]** object and connect it to the first outlet of the connection object of the `brds_synth`. This will allow the module to be selected (from the note router) as recever 1.
-   * Connect the 4 rightmost outlets of the `brds_synth` to the **[output]** object.
+   * Connect the 4 rightmost outlets of the `brds_synth` to the **[send_to_output]** object.
 * **Start making music**.
    * Initialize the project: click on the `init` button.
-   * Turn on the `melody_seq` by clicking on the radio on top left and select `internal`: this will start the generation of the notes following the internal tempo.
+   * Turn on the `melody_seq` by clicking on the radio on top left and select `int`: this will start the generation of the notes following the internal tempo.
    * Assign the source 1 to the destination 1 in the note router matrix.
    * Turn on the main volume.
    * Now you should hear sound!
