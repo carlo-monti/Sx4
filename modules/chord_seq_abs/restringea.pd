@@ -169,6 +169,7 @@
 #X obj -60 444 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj 390 857 outlet;
 #X text 54 569 dump generated strings;
+#X obj -86 601 print;
 #X connect 0 0 37 0;
 #X connect 1 0 17 1;
 #X connect 2 0 17 0;
@@ -284,6 +285,7 @@
 #X connect 104 0 107 0;
 #X connect 105 0 106 0;
 #X connect 111 0 134 0;
+#X connect 111 0 136 0;
 #X connect 112 0 114 0;
 #X connect 112 1 115 0;
 #X connect 113 0 112 0;
