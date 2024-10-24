@@ -146,7 +146,7 @@
 #X obj 296 860 outlet;
 #X obj -81 551 stampa;
 #X obj -82 488 t b b;
-#X obj -115 408 t b b;
+#X obj 33 404 t b b;
 #X msg -80 531 symbol accpnsvtosr;
 #X msg -80 510 symbol Remove;
 #X obj 100 213 / 127;
@@ -166,6 +166,9 @@
 #X obj 253 295 - 12;
 #X obj 240 351 >;
 #X msg -12 125 127;
+#X obj -60 444 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
+#X obj 390 857 outlet;
+#X text 54 569 dump generated strings;
 #X connect 0 0 37 0;
 #X connect 1 0 17 1;
 #X connect 2 0 17 0;
@@ -280,8 +283,10 @@
 #X connect 103 0 108 0;
 #X connect 104 0 107 0;
 #X connect 105 0 106 0;
+#X connect 111 0 134 0;
 #X connect 112 0 114 0;
 #X connect 112 1 115 0;
+#X connect 113 0 112 0;
 #X connect 114 0 111 0;
 #X connect 115 0 111 1;
 #X connect 116 0 117 0;
@@ -309,4 +314,5 @@
 #X connect 130 0 127 0;
 #X connect 131 0 128 0;
 #X connect 132 0 120 0;
+#X connect 133 0 112 0;
 #X coords 0 -1 1 1 90 80 2 100 100;

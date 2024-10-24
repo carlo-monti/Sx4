@@ -1,0 +1,71 @@
+-- This script will change the color of the fader, button, xy, radio and radial objects with the color of the object where the script reside
+
+function change_color(object, new_color)
+  if (object.type == ControlType.FADER) or (object.type == ControlType.BUTTON) or (object.type == ControlType.XY) or (object.type == ControlType.RADIO) or (object.type == ControlType.RADIAL) then
+    object.color = new_color
+  end
+end
+
+function init(key)
+  new_color = self.color
+  object_at_level_0 = self.parent
+  child_count_1 = #object_at_level_0.children
+  if child_count_1 > 0 then
+    -- cycle through all the children of level 1
+    for index_1 = 1,child_count_1,1 
+    do
+      object_at_level_1 = object_at_level_0.children[index_1]
+      change_color(object_at_level_1,new_color)
+      -- cycle through all the children of level 2
+      child_count_2 = #object_at_level_1.children
+      if child_count_2 > 0 then
+        for index_2 = 1,child_count_2,1 
+        do
+        object_at_level_2 = object_at_level_1.children[index_2]
+        change_color(object_at_level_2,new_color)
+        -- cycle through all the children of level 3
+          child_count_3 = #object_at_level_2.children
+          if child_count_3 > 0 then
+            for index_3 = 1,child_count_3,1 
+            do
+            object_at_level_3 = object_at_level_2.children[index_3]
+            change_color(object_at_level_3,new_color)
+            -- cycle through all the children of level 4
+            child_count_4 = #object_at_level_3.children
+              if child_count_4 > 0 then
+                for index_4 = 1,child_count_4,1 
+                do
+                object_at_level_4 = object_at_level_3.children[index_4]
+                change_color(object_at_level_4,new_color)
+
+                child_count_5 = #object_at_level_4.children
+                  if child_count_5 > 0 then
+                    for index_5 = 1,child_count_5,1 
+                    do
+                    object_at_level_5 = object_at_level_4.children[index_5]
+                    change_color(object_at_level_5,new_color)
+                    
+                    -- to extend depth copy from here
+                    child_count_6 = #object_at_level_5.children
+                      if child_count_6 > 0 then
+                        for index_6 = 1,child_count_6,1 
+                        do
+                        object_at_level_6 = object_at_level_5.children[index_6]
+                        change_color(object_at_level_6,new_color)
+                        
+                        -- inside here and change index +1 
+                        
+                        end
+                      end
+                      -- to here
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end

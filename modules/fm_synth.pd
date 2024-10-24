@@ -577,7 +577,7 @@
 #X obj 821 1928 list trim;
 #X obj 821 1906 list prepend set;
 #X text 697 2011 osc_out;
-#N canvas 66 32 1854 977 handle_presets 0;
+#N canvas 276 493 1390 977 handle_presets 0;
 #X obj -146 2325 tabwrite presets_\$0;
 #X msg 265 975 \$1 1;
 #X msg 265 952 \$1 0;
@@ -849,6 +849,12 @@
 #X obj -78 1996 list append 212;
 #X obj -78 1973 r fbk_compressor_on_\$0;
 #X obj 2062 1040 s preset_lfo_phs_\$0;
+#X obj -45 1559 t b b;
+#X msg -45 1584 1;
+#X obj -3 1603 del 50;
+#X msg -3 1628 0;
+#X obj -27 1520 r fbk_lfo_cycle_\$0;
+#X obj -38 1667 list append 220;
 #X connect 1 0 38 0;
 #X connect 2 0 38 0;
 #X connect 3 0 38 0;
@@ -1206,6 +1212,13 @@
 #X connect 267 0 164 0;
 #X connect 268 0 164 0;
 #X connect 269 0 268 0;
+#X connect 271 0 272 0;
+#X connect 271 1 273 0;
+#X connect 272 0 276 0;
+#X connect 273 0 274 0;
+#X connect 274 0 276 0;
+#X connect 275 0 271 0;
+#X connect 276 0 164 0;
 #X restore -23 -467 pd handle_presets;
 #X obj 1208 232 s feedbk_sync_name_out_\$0;
 #X obj -566 -423 s load_init_\$0;
@@ -1405,6 +1418,8 @@
 #X msg 784 -586 1;
 #X obj -449 -505 loadbang;
 #X msg -449 -481 1;
+#X obj 1156 155 s fbk_lfo_cycle_\$0;
+#X obj 930 65 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X connect 0 0 15 0;
 #X connect 1 0 16 0;
 #X connect 2 0 17 0;
@@ -1477,6 +1492,8 @@
 #X connect 74 7 224 0;
 #X connect 74 8 226 0;
 #X connect 74 9 230 0;
+#X connect 74 10 416 0;
+#X connect 74 10 417 0;
 #X connect 75 0 158 0;
 #X connect 76 0 74 0;
 #X connect 77 0 157 0;

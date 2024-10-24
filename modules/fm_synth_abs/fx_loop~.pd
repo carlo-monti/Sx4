@@ -1,5 +1,5 @@
 #N canvas -8 -8 1366 725 12;
-#X obj 384 506 delwrite~ delay_\$0 10000;
+#X obj 394 505 delwrite~ delay_\$0 10000;
 #X obj 50 16 inlet~;
 #X obj 430 667 outlet~;
 #X text 226 142 0.01-16;

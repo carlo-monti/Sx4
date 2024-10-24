@@ -1,0 +1,17 @@
+#N canvas 632 431 817 567 12;
+#X obj 52 241 *~;
+#X obj 52 287 outlet~;
+#X obj 52 128 inlet~;
+#X obj 117 129 inlet~;
+#X obj 187 128 inlet~;
+#X obj 253 127 inlet~;
+#X obj 202 210 loadbang;
+#X msg 202 235 0.25;
+#X text 367 125 comment;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 1;
