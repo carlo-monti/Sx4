@@ -15,7 +15,7 @@ This section illustrate how to start making music with Sx4. Let's create a simpl
    * Do the same for creating a `brds_synth` module: create the object and assign to it ID 1.
    * Create a **[note_sender 1]** object and connect it to the first outlet of the `melody_seq` module. This will allow the module to be selected as source (from the note router) as source 1.
    * Create a **[note_receiver 1]** object and connect it to the first outlet of the connection object of the `brds_synth`. This will allow the module to be selected (from the note router) as recever 1.
-   * Connect the 4 rightmost outlets of the `brds_synth` to the **[send_to_output]** object.
+   * Connect the 4 rightmost outlets of the `brds_synth` to the **[main_send_to_output]** object.
 * **Start making music**.
    * Initialize the project: click on the `init` button.
    * Turn on the `melody_seq` by clicking on the radio on top left and select `int`: this will start the generation of the notes following the internal tempo.
