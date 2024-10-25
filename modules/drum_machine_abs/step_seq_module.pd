@@ -1,11 +1,11 @@
 #N canvas 52 20 1854 977 12;
 #X obj -107 214 tabwrite seq_main_\$0;
-#X obj 1071 790 == 1;
-#X obj 1071 762 tabread seq_main_\$0;
+#X obj 1071 723 == 1;
+#X obj 1071 695 tabread seq_main_\$0;
 #X obj -147 555 i;
 #X obj -69 554 + 1;
-#X obj 1070 821 sel 1;
-#X obj 1071 732 r play_index_\$0;
+#X obj 1070 754 sel 1;
+#X obj 1071 665 r play_index_\$0;
 #X obj 463 -687 table seq_main_\$0 32;
 #X obj 207 467 s n_of_steps_\$0;
 #X obj 239 445 loadbang;
@@ -527,7 +527,7 @@
 #X obj 414 221 tgl 20 0 empty empty rev 1 11 1 12 #fcfcfc #000000 #7c7c7c 0 1;
 #X obj 422 1271 s reverse_\$0;
 #X obj 1101 1011 s randomize_now_\$0;
-#X obj 1639 750 r randomize_now_\$0;
+#X obj 1727 780 r randomize_now_\$0;
 #X obj 1069 979 t b b;
 #X obj 1806 829 r rst_\$0;
 #X obj 1784 1478 r rst_\$0;
@@ -667,7 +667,7 @@
 #X obj 519 920 loadbang;
 #X obj 325 350 r to_samp_n_\$0;
 #X obj 327 329 s from_samp_n_\$0;
-#N canvas 682 111 1150 805 handle_sample_selection 1;
+#N canvas 682 111 1150 805 handle_sample_selection 0;
 #X obj 247 105 i;
 #X obj 417 105 i;
 #X obj 449 111 - 1;
@@ -947,8 +947,8 @@
 #X connect 20 0 7 0;
 #X connect 20 1 9 0;
 #X connect 21 0 19 0;
-#X restore 1070 857 pd chance;
-#X obj 1133 824 r chance_\$0;
+#X restore 1070 785 pd chance;
+#X obj 1133 752 r chance_\$0;
 #X obj 114 299 s sync_\$0;
 #X obj 112 323 s div_\$0;
 #X obj 160 -126 r preset_sync_\$0;
@@ -2172,6 +2172,7 @@
 #X obj 1596 346 s fbk_lfo2_cycle_\$0;
 #X obj 1356 141 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 1356 219 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 1721 1400 r randomize_now_\$0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
@@ -2258,7 +2259,6 @@
 #X connect 84 0 76 0;
 #X connect 84 0 74 1;
 #X connect 85 0 86 0;
-#X connect 88 0 27 0;
 #X connect 88 0 520 0;
 #X connect 89 0 71 0;
 #X connect 89 0 283 0;
@@ -2666,4 +2666,5 @@
 #X connect 523 0 524 0;
 #X connect 525 0 523 1;
 #X connect 526 0 125 0;
+#X connect 531 0 27 0;
 #X coords 0 -1 1 1 1400 160 2 100 100;
