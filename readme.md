@@ -1,5 +1,7 @@
-
 # Sx4
+
+# Disclaimer
+This project is currently undergoing refactoring. It is not functioning!
 
 ## What is it
 
