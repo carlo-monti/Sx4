@@ -1,7 +1,7 @@
 # Sx4
 
-# Disclaimer
-This project is currently undergoing refactoring. It is not functioning!
+# Warning
+This project is currently undergoing refactoring to implement 1st order ambisonics. It is not working.
 
 ## What is it
 
